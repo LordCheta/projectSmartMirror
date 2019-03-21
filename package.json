@@ -1,0 +1,34 @@
+{
+  "name": "projectsmartmirror",
+  "version": "0.0.1",
+  "description": "The OS for a touchscreen and voice enabled smart mirror",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordCheta/projectSmartMirror.git"
+  },
+  "keywords": [
+    "smart",
+    "mirror",
+    "electron",
+    "javaScript",
+    "node.js",
+    "touchScreen",
+    "Voice",
+    "commands"
+  ],
+  "author": "Lord Cheta, Dera-Jo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LordCheta/projectSmartMirror/issues"
+  },
+  "homepage": "https://github.com/LordCheta/projectSmartMirror#readme",
+  "devDependencies": {
+    "electron": "^4.1.1",
+    "electron-reload": "^1.4.0"
+  }
+}

@@ -1,0 +1,13 @@
+:root{
+    
+}
+
+body{
+    background-color: black;
+}
+#testHeader{
+    text-align: center;
+    margin-top: 30%;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
