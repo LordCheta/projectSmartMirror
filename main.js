@@ -12,36 +12,36 @@ const app = electron.app; //Module to create native browser window
 let mainWindow; // Global reference to window object
 
 // Menu Template definition
-let template = [{
-  label: 'Power',
-  submenu: [{
-    label: 'Sleep'
-  }, 
-  {
-    label: 'Shut Down'
-  }]
-}, {
-  label: 'About',
-  submenu: [{
-    label: 'Version'
-  }, {
-    label: 'Check for Update'
-  }]
-}]
-// Snippet to take care of Mac menu behaviour
-if (process.platform === 'darwin') {
-  const name = electron.app.getName()
-  template.unshift({
-    label: name,
-    submenu: [{
-      label: 'Quit',
-      accelerator: 'Command+Q',
-      click: function () {
-        app.quit()
-      }
-    }]
-  })
-}
+// let template = [{
+//   label: 'Power',
+//   submenu: [{
+//     label: 'Sleep'
+//   }, 
+//   {
+//     label: 'Shut Down'
+//   }]
+// }, {
+//   label: 'About',
+//   submenu: [{
+//     label: 'Version'
+//   }, {
+//     label: 'Check for Update'
+//   }]
+// }]
+// // Snippet to take care of Mac menu behaviour
+// if (process.platform === 'darwin') {
+//   const name = electron.app.getName()
+//   template.unshift({
+//     label: name,
+//     submenu: [{
+//       label: 'Quit',
+//       accelerator: 'Command+Q',
+//       click: function () {
+//         app.quit()
+//       }
+//     }]
+//   })
+// }
 
 const BrowserWindow = electron.BrowserWindow;
 
@@ -59,7 +59,7 @@ let createWindow = () => {
         slashes: true
     }));
 
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 
     // Wait for 'ready-to-show' to display our window
     mainWindow.once('ready-to-show', () => {
@@ -81,8 +81,8 @@ const Menu = electron.Menu
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', ()=> {
-  const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu)
+  // const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(null)
   createWindow()
 });
 

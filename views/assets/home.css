@@ -5,9 +5,46 @@
 body{
     background-color: black;
 }
-#testHeader{
+/* --------------------- Splash Screen Styles-------------------------------- */
+#splashScreen{
+    display: block;
+}
+#caption{
     text-align: center;
     margin-top: 30%;
     color: #ffffff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    letter-spacing: 0.19em;
+}
+#smallCaption{
+    position: relative;
+    top: -30px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.09em
+}
+
+/* -----------------------------Desktop View Styles------------------------------------- */
+#desktop{
+    display: none;
+}
+#test{
+    text-align: center;
+    margin-top: 30%;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    letter-spacing: 0.19em;
+}
+#testb{
+    position: relative;
+    top: -30px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.09em
 }
