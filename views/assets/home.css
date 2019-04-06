@@ -1,41 +1,26 @@
+@font-face {
+    font-family: poppins;
+    src: url('./poppins.woff2');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 :root{
-    
+    --white: #ffffff;
+    --black: #000000;
 }
-
 body{
-    background-color: black;
+    background-color: var(--black);
 }
-/* --------------------- Splash Screen Styles-------------------------------- */
-#splashScreen{
-    display: block;
-}
-#caption{
-    text-align: center;
-    margin-top: 30%;
-    color: #ffffff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 50px;
-    font-weight: 200;
-    letter-spacing: 0.19em;
-}
-#smallCaption{
-    position: relative;
-    top: -30px;
-    text-align: center;
-    color: #ffffff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: 0.09em
-}
-
 /* -----------------------------Desktop View Styles------------------------------------- */
 #desktop{
-    display: none;
+    display: block;
+    /* grid-template-columns: 1fr 1fr */
 }
 #test{
     text-align: center;
     margin-top: 30%;
-    color: #ffffff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--white);
+    font-family: poppins;
     font-size: 50px;
     font-weight: 200;
     letter-spacing: 0.19em;
@@ -44,7 +29,7 @@ body{
     position: relative;
     top: -30px;
     text-align: center;
-    color: #ffffff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--white);
+    font-family: poppins;
     letter-spacing: 0.09em
 }

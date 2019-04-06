@@ -10,6 +10,34 @@ const app = electron.app; //Module to create native browser window
 
 
 let mainWindow; // Global reference to window object
+let splashWindow;
+
+let createSplashWindow = () => {
+  splashWindow = new BrowserWindow({
+    width: 420,
+    height: 340,
+    frame: false,
+    resizable: false,
+    backgroundColor: '#FFF',
+    alwaysOnTop: true,
+    show: false
+  });
+
+  splashWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/splash.html'),
+    protocol: 'file',
+    slashes: true
+  }))
+  splashWindow.on('closed', () => {
+    splashWindow = null
+  })
+  splashWindow.once('ready-to-show', () => {
+    splashWindow.show()
+  })
+}
+
+
+
 
 // Menu Template definition
 // let template = [{
@@ -45,6 +73,7 @@ let mainWindow; // Global reference to window object
 
 const BrowserWindow = electron.BrowserWindow;
 
+
 let createWindow = () => {
     mainWindow = new BrowserWindow({ 
       show: false,
@@ -60,6 +89,8 @@ let createWindow = () => {
     }));
 
     // mainWindow.webContents.openDevTools();
+
+  
 
     // Wait for 'ready-to-show' to display our window
     mainWindow.once('ready-to-show', () => {
@@ -83,7 +114,7 @@ const Menu = electron.Menu
 app.on('ready', ()=> {
   // const menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(null)
-  createWindow()
+  createSplashWindow()
 });
 
 // Quit when all windows are closed.
