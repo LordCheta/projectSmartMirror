@@ -7,6 +7,8 @@ require('electron-reload')(__dirname)
 
 
 const app = electron.app; //Module to create native browser window
+// Inter-Process Communication (IPC)
+const ipcMain = electron.ipcMain
 
 
 let mainWindow; // Global reference to window object
@@ -33,6 +35,7 @@ let createSplashWindow = () => {
   })
   splashWindow.once('ready-to-show', () => {
     splashWindow.show()
+    createWindow();
   })
 }
 
@@ -93,9 +96,9 @@ let createWindow = () => {
   
 
     // Wait for 'ready-to-show' to display our window
-    mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
-    })
+    // mainWindow.once('ready-to-show', () => {
+    // mainWindow.show()
+    // })
     
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
@@ -129,8 +132,24 @@ app.on('window-all-closed', function () {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) {
-      createWindow()
+      createSplashWindow()
     }
   })
   // In this file you can include the rest of your app's specific main process
   // code. You can also put them in separate files and require them here
+
+  //SPLASH WINDOW: REQUEST FOR VERSION
+ipcMain.on('get-version', event => {
+  console.log('app version: ', app.getVersion())
+  event.sender.send('set-version', app.getVersion())
+})
+
+// MAIN WINDOW: FINISHED LOADING
+ipcMain.on('app-init', event => {
+  if (splashWindow) {
+    setTimeout(() => {
+      splashWindow.close()
+    }, 2000)
+  }
+  mainWindow.show()
+})
