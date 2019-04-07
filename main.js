@@ -95,7 +95,7 @@ let createWindow = () => {
 
   
 
-    // Wait for 'ready-to-show' to display our window
+    // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
     // mainWindow.once('ready-to-show', () => {
     // mainWindow.show()
     // })
