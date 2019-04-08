@@ -9,16 +9,51 @@
 </head>
 <body>
     <section class="desktop">
+        <!-- Date And Time Display -->
         <div id="dateTimeDisplay">
             <p id="timeDisplay"></p>
             <p id="dateDisplay"></p>
         </div>
+        <!-- End Date And Time Display -->
+
+        <!-- Menu Icon, Mic & Search Icon -->
+        <div id="menuIcons">
+            <nav>
+                <ul>
+                    <li><img src="./assets/search.svg" alt="search"></li>
+                    <li><img src="./assets/mic.svg" alt="mic"></li>
+                    <li><img src="./assets/menu.svg" alt="menu"></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- End Menu Icon, Mic & Search Icon -->
+
+        <!-- Weather Display -->
+        <div id="weatherDisplay">
+            <div id="loadingWeather">
+                <img id="wSpin" src="./assets/load-icon.svg" alt="loading-weather">
+                <p id="wText">..loading weather</p>
+            </div>
+            <p id="temp"></p>
+            <p id="tempDescription"></p>
+        </div>
+        <!-- End Weather Display -->
+
+        <!-- Calender/TODO Display -->
+        <div id="calenderDisplay">
+            <h1 id="calenderTitle">CALENDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><img src="./assets/plus.svg" alt=""></span></h1>
+        </div>
+        <!-- End Calender/TODO Display -->
+
         <!-- <h1 id="test">Hi, Lord Cheta</h1> -->
         <!-- <p id="testb">you look sexy today ;)</p> -->
         
     </section>
     
 
+    <footer>
+        <p id="foot">ENYO</p>
+    </footer>
     <script>
         require('../renderer.js');
         require('../views/js/desktop.js')
