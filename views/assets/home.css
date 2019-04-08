@@ -40,7 +40,53 @@ body{
     margin-top:-12%
 }
 #menuIcons{
-    grid-column: 2;
+    grid-column: 2 /span 1;
+    margin-top: 10%;
+    margin-left: 52%;
+}
+#menuIcons>nav>ul>li{ 
+    display: inline-block;
+    margin: 10px;
+}
+#weatherDisplay{
+    grid-row: auto;
+    grid-column: 1 / span 1
+}
+#loadingWeather{
+    margin-left: 12%;
+    color: var(--white);
+    font-family: poppins;
+    font-weight: 100;
+    font-size: 10px;
+}
+#wText{
+    margin-top: -1%;
+    margin-left: -6%;
+}
+
+#temp{
+    font-family: poppins;
+    font-weight: 200;
+    color: var(--white);
+    margin-top: -3%;
+}
+#tempDescription{
+    font-family: poppins;
+    font-weight: 200;
+    color: var(--white);
+    margin-top: -3%;
+}
+#calenderDisplay{
+    grid-column: 1 / span 1;
+    grid-row: auto;
+}
+#calenderTitle{
+    width: 200px;
+    margin-top: 5%;
+    font-family: poppins;
+    font-weight: 200;
+    color: var(--white);
+    border-bottom: 1px solid var(--white)
 }
 #test{
     text-align: center;
