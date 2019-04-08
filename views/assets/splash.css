@@ -1,0 +1,46 @@
+@font-face {
+    font-family: poppins;
+    src: url('./poppins.woff2');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+:root{
+    --white: #ffffff;
+    --black: #000000;
+}
+body{
+    background-color: var(--black);
+}
+/* --------------------- Splash Screen Styles-------------------------------- */
+#splashScreen{
+    display: block;
+}
+#caption{
+    text-align: center;
+    margin-top: 25%;
+    color: var(--white);
+    font-family: poppins;
+    font-size: 50px;
+    font-weight: 200;
+    letter-spacing: 0.19em;
+}
+#smallCaption{
+    position: relative;
+    top: -50px;
+    text-align: center;
+    color: var(--white);
+    font-family: poppins;
+}
+#loadIcon{
+    position: relative;
+    top: -70px;
+    margin-left: 170px
+}
+#version{
+    position: relative;
+    top: -100px;
+    margin-left: 170px;
+    color: var(--white);
+    font: poppins;
+    font-size: 10px
+}
