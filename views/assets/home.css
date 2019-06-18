@@ -37,7 +37,8 @@ body{
     color: var(--white);
     padding-bottom: 2px;
     border-bottom: 1px solid var(--white);
-    margin-top:-12%
+    position: relative;
+    top:-20%
 }
 #menuIcons{
     grid-column: 2 /span 1;
@@ -81,6 +82,18 @@ body{
     grid-row: auto;
 }
 #calenderTitle{
+    width: 200px;
+    margin-top: 5%;
+    font-family: poppins;
+    font-weight: 200;
+    color: var(--white);
+    border-bottom: 1px solid var(--white)
+}
+#newsDisplay{
+    grid-column: 1 / span 1;
+    grid-row: auto;
+}
+#newsTitle{
     width: 200px;
     margin-top: 5%;
     font-family: poppins;

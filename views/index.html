@@ -45,6 +45,17 @@
         </div>
         <!-- End Calender/TODO Display -->
 
+
+        <!-- News Display -->
+        <div id="newsDisplay">
+            <h1 id="newsTitle">TRENDING</h1>
+            <div id="loadingWeather">
+                <img id="wSpin" src="./assets/load-icon.svg" alt="loading-weather">
+                <p id="wText">..fetching headlines</p>
+            </div>
+        </div>
+        <!-- End News Display -->
+
         <!-- <h1 id="test">Hi, Lord Cheta</h1> -->
         <!-- <p id="testb">you look sexy today ;)</p> -->
         
@@ -54,7 +65,7 @@
     <footer>
         <p id="foot">ENYO</p>
     </footer>
-    <script>
+    <script type="module">
         require('../renderer.js');
         require('../views/js/desktop.js')
     </script>
