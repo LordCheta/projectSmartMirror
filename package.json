@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/LordCheta/projectSmartMirror#readme",
   "devDependencies": {
-    "electron": "^4.1.1",
+    "electron": "^4.2.5",
     "electron-reload": "^1.4.0"
   }
 }
