@@ -10,13 +10,13 @@ window.onload = () => {
 
     // Method controlling date and time display
     let showDateTime = async () => {
-        let amPm = 'pm';
+        let amPm = 'am';
         let desktopDate = new Date();
         // for the hour
         let hour = desktopDate.getHours();
         if ( hour > 12 ) {
             hour -= 12;
-            amPm = 'am';
+            amPm = 'pm';
         }
         let min = desktopDate.getMinutes() < 10 ? `0${desktopDate.getMinutes()}` : desktopDate.getMinutes();
         let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -24,7 +24,7 @@ window.onload = () => {
         let date =desktopDate.getDate()
         let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         let month = months[desktopDate.getMonth()];
-        console.log(desktopDate);
+        // console.log(desktopDate);
     
         dom.timeDisplay.innerHTML = `${hour}:${min}${amPm}`;
         dom.dateDisplay.innerHTML = `${day}, ${date} ${month}`

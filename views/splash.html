@@ -14,19 +14,19 @@
         <img id="loadIcon" src="./assets/loadIco.svg" alt="load-icon">
         <!-- The App Version is automatically Injected by Electron -->
         <!-- <p id="version">version <span id="versionSpan"></span></p> -->
-</section>
+    </section>
 
 
 
-<script>
-    const { ipcRenderer } = require('electron')
+    <script>
+        const { ipcRenderer } = require('electron')
 
-    ipcRenderer.on('set-version', (event, arg) => {
-      const versionSpan = document.getElementById('versionSpan')
-      versionSpan.innerHTML = arg
-    })
+        ipcRenderer.on('set-version', (event, arg) => {
+        const versionSpan = document.getElementById('versionSpan')
+        versionSpan.innerHTML = arg
+        })
 
-    ipcRenderer.send('get-version')
-</script>
+        ipcRenderer.send('get-version')
+    </script>
 </body>
 </html>
