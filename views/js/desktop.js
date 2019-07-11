@@ -38,8 +38,8 @@ window.onload = () => {
 };
 
 // Method controlling weather display
-var url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
 this.getWeather = async() => {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
     var details = await axios.default.get(url)
     return details.data;
     }
@@ -61,4 +61,15 @@ this.getWeather = async() => {
 
 
 
-// Method comtrolling news headlines display
+// Method controlling news headlines display
+this.getNews = async() => {
+    var url = 'https://newsapi.org/v2/sources?language=en&country=ng&apiKey='+ key.news
+    var details = await axios.default.get(url)
+    return details.data;
+    }
+    
+    this.displayNews = async() => {
+        var res = await this.getNews()
+        console.log(res)
+    }
+    this.displayNews();
