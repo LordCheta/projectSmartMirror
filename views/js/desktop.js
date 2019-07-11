@@ -1,3 +1,6 @@
+var key = require('../config/key');
+const axios = require('axios')
+
 window.onload = () => {
 
     // Object containing all DOM queries
@@ -35,6 +38,17 @@ window.onload = () => {
 };
 
 // Method controlling weather display
+var url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
+this.getWeather = async() => {
+    var details = await axios.default.get(url)
+    return details.data;
+    }
+    
+    this.diplayWeather = async() => {
+        var res = await this.getWeather()
+        console.log(res.main.temp)
+    }
+    this.diplayWeather();
 
 
 // Method controlling calender todo list
