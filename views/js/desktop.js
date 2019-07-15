@@ -38,17 +38,19 @@ window.onload = () => {
 };
 
 // Method controlling weather display
-this.getWeather = async() => {
+let getWeather = async() => {
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
     var details = await axios.default.get(url)
     return details.data;
     }
     
-    this.diplayWeather = async() => {
-        var res = await this.getWeather()
-        console.log(res.main.temp)
+    let displayWeather = async() => {
+        var res = await getWeather()
+        let tempCel = res.main.temp - 273.15;
+        let temp = tempCel.toFixed(0);
+        console.log(temp)
     }
-    this.diplayWeather();
+    displayWeather();
 
 
 // Method controlling calender todo list
