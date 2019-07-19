@@ -44,10 +44,15 @@ let getWeather = async () => {
 }
     
 let displayWeather = async () => {
-    var res = await getWeather()
-    let tempCel = res.main.temp - 273.15;
-    let temp = tempCel.toFixed(0);
-    console.log(temp)
+    try {
+        let res = await getWeather()
+        let tempCel = res.main.temp - 273.15;
+        let temp = tempCel.toFixed(0);
+        console.log(res)
+    } catch (error) {
+        throw error
+    }
+    
 }
 displayWeather();
 
