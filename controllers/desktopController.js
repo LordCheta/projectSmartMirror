@@ -34,9 +34,13 @@ window.onload = () => {
 
 // Method controlling weather display
 let getWeather = async () => {
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
-    var details = await axios.default.get(url)
-    return details.data;
+    const url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
+    try {
+        let details = await axios.default.get(url)
+        return details.data;
+    } catch (error) {
+        throw error
+    }
 }
     
 let displayWeather = async () => {
@@ -60,14 +64,22 @@ displayWeather();
 
 // Method controlling news headlines display
 this.getNews = async() => {
-    var url = 'https://newsapi.org/v2/sources?language=en&country=ng&apiKey='+ key.news
-    var details = await axios.default.get(url)
-    return details.data;
+    const url = 'https://newsapi.org/v2/sources?language=en&country=ng&apiKey='+ key.news
+    try {
+        let details = await axios.default.get(url)
+        return details.data;
+    } catch (error) {
+        throw error
+    } 
 }
     
 this.displayNews = async() => {
-    var res = await this.getNews()
-    console.log(res)
+    try {
+        let res = await this.getNews()
+        console.log(res)
+    } catch (error) {
+        throw error
+    }  
 }
 this.displayNews();
 
