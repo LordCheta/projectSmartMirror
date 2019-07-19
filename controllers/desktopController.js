@@ -1,14 +1,9 @@
-var key = require('../config/key');
+const key = require('../config/keys')
 const axios = require('axios')
+const dom = require('../views/base') // Object containing all DOM queries
 
 window.onload = () => {
 
-    // Object containing all DOM queries
-    let dom = {
-    desktop: document.querySelector('.desktop'),
-    timeDisplay: document.querySelector('#timeDisplay'),
-    dateDisplay: document.querySelector('#dateDisplay')
-}
     // Desktop Funtionalities
 
     // Method controlling date and time display
@@ -35,22 +30,31 @@ window.onload = () => {
 
     // calls the date and time method for display at specified interval
     setInterval(showDateTime, 1000);
-};
+
 
 // Method controlling weather display
-let getWeather = async() => {
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
-    var details = await axios.default.get(url)
-    return details.data;
+let getWeather = async () => {
+    const url = 'http://api.openweathermap.org/data/2.5/weather?q=Awka,Nigeria&APPID='+ key.weather
+    try {
+        let details = await axios.default.get(url)
+        return details.data;
+    } catch (error) {
+        throw error
     }
+}
     
-    let displayWeather = async() => {
-        var res = await getWeather()
+let displayWeather = async () => {
+    try {
+        let res = await getWeather()
         let tempCel = res.main.temp - 273.15;
         let temp = tempCel.toFixed(0);
-        console.log(temp)
+        console.log(res)
+    } catch (error) {
+        throw error
     }
-    displayWeather();
+    
+}
+displayWeather();
 
 
 // Method controlling calender todo list
@@ -65,13 +69,23 @@ let getWeather = async() => {
 
 // Method controlling news headlines display
 this.getNews = async() => {
-    var url = 'https://newsapi.org/v2/sources?language=en&country=ng&apiKey='+ key.news
-    var details = await axios.default.get(url)
-    return details.data;
-    }
+    const url = 'https://newsapi.org/v2/sources?language=en&country=ng&apiKey='+ key.news
+    try {
+        let details = await axios.default.get(url)
+        return details.data;
+    } catch (error) {
+        throw error
+    } 
+}
     
-    this.displayNews = async() => {
-        var res = await this.getNews()
+this.displayNews = async() => {
+    try {
+        let res = await this.getNews()
         console.log(res)
-    }
-    this.displayNews();
+    } catch (error) {
+        throw error
+    }  
+}
+this.displayNews();
+
+};
