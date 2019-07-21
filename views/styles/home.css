@@ -1,6 +1,6 @@
 @font-face {
     font-family: poppins;
-    src: url('./poppins.woff2');
+    src: url('../assets/poppins.woff2');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -117,6 +117,47 @@ body{
     color: var(--white);
     font-family: poppins;
     letter-spacing: 0.09em
+}
+/* ------------------------------------ Menu -------------------------- */
+#menu{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 999;
+    width: 270px;
+    height: 100%;
+    background-color: rgba(19, 13, 13, 0.795);
+    /* opacity: 0.9; */
+    -webkit-transform: translate(-270px, 0);
+    transform: translate(-270px, 0);
+    transition: transform 1s ease-in-out;
+}
+#menuTopBtns{
+    /* padding: 5px; */
+    border-bottom: 1px solid var(--white)
+}
+#menuTopBtns>ul>li{
+    display: inline;
+    margin-right: 15px;
+}
+.menuTopIcons{
+    width: 16%;
+    height: 16%;
+}
+#menuTopBtns>ul>li{
+    list-style: none;
+}
+#menuAppsList>ul>li{
+    list-style: none;
+    margin-top: 20px;
+}
+#menuAppsList>ul>li>a{
+    text-decoration: none;
+    color: var(--white);
+    font-family: poppins;
+    font-weight: 100;
+    font-size: 20px
 }
 /* ------------------------------------ Footer------------------------------------------ */
 #foot{

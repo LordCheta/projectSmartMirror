@@ -11,8 +11,16 @@ const app = electron.app; //Module to create native browser window
 const ipcMain = electron.ipcMain
 
 
-let mainWindow; // Global reference to window object
-let splashWindow;
+let mainWindow // Global reference to window object
+let splashWindow
+let musicPlayerAppWindow
+let galleryAppWindow
+let uberAppWindow
+let browserAppWindow
+let timerAppWindow
+let videoAppWindow
+
+const BrowserWindow = electron.BrowserWindow;
 
 let createSplashWindow = () => {
   splashWindow = new BrowserWindow({
@@ -38,44 +46,6 @@ let createSplashWindow = () => {
     createWindow();
   })
 }
-
-
-
-
-// Menu Template definition
-// let template = [{
-//   label: 'Power',
-//   submenu: [{
-//     label: 'Sleep'
-//   }, 
-//   {
-//     label: 'Shut Down'
-//   }]
-// }, {
-//   label: 'About',
-//   submenu: [{
-//     label: 'Version'
-//   }, {
-//     label: 'Check for Update'
-//   }]
-// }]
-// // Snippet to take care of Mac menu behaviour
-// if (process.platform === 'darwin') {
-//   const name = electron.app.getName()
-//   template.unshift({
-//     label: name,
-//     submenu: [{
-//       label: 'Quit',
-//       accelerator: 'Command+Q',
-//       click: function () {
-//         app.quit()
-//       }
-//     }]
-//   })
-// }
-
-const BrowserWindow = electron.BrowserWindow;
-
 
 let createWindow = () => {
     mainWindow = new BrowserWindow({ 
@@ -109,14 +79,44 @@ let createWindow = () => {
   });
 }
 
-const Menu = electron.Menu
+let createMusicPlayerAppWindow = () => {
+  musicPlayerAppWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450 
+  }); 
+
+  musicPlayerAppWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/index.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  musicPlayerAppWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+// mainWindow.once('ready-to-show', () => {
+// mainWindow.show()
+// })
+
+// Emitted when the window is closed.
+  musicPlayerAppWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  musicPlayerAppWindow = null
+  });
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', ()=> {
   // const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(null)
+  // Menu.setApplicationMenu(null)
   createSplashWindow()
 });
 
