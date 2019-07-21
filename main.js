@@ -93,14 +93,15 @@ let createMusicPlayerAppWindow = () => {
     slashes: true
   }));
 
-  musicPlayerAppWindow.webContents.openDevTools();
+  // musicPlayerAppWindow.webContents.openDevTools();
 
 
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-// mainWindow.once('ready-to-show', () => {
-// mainWindow.show()
-// })
+  musicPlayerAppWindow.once('ready-to-show', () => {
+  musicPlayerAppWindow.show()
+  
+})
 
 // Emitted when the window is closed.
   musicPlayerAppWindow.on('closed', function () {
@@ -125,14 +126,14 @@ let createGalleryAppWindow = () => {
     slashes: true
   }));
 
-  galleryAppWindow.webContents.openDevTools();
+  // galleryAppWindow.webContents.openDevTools();
 
 
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-// mainWindow.once('ready-to-show', () => {
-// mainWindow.show()
-// })
+  galleryAppWindow.once('ready-to-show', () => {
+  galleryAppWindow.show()
+})
 
 // Emitted when the window is closed.
   galleryAppWindow.on('closed', function () {
@@ -157,14 +158,14 @@ let createUberAppWindow = () => {
     slashes: true
   }));
 
-  uberAppWindow.webContents.openDevTools();
+  // uberAppWindow.webContents.openDevTools();
 
 
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-// mainWindow.once('ready-to-show', () => {
-// mainWindow.show()
-// })
+  uberAppWindow.once('ready-to-show', () => {
+  uberAppWindow.show()
+})
 
 // Emitted when the window is closed.
   uberAppWindow.on('closed', function () {
@@ -189,14 +190,14 @@ let createBrowserAppWindow = () => {
     slashes: true
   }));
 
-  browserAppWindow.webContents.openDevTools();
+  // browserAppWindow.webContents.openDevTools();
 
 
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-// mainWindow.once('ready-to-show', () => {
-// mainWindow.show()
-// })
+  browserAppWindow.once('ready-to-show', () => {
+  browserAppWindow.show()
+})
 
 // Emitted when the window is closed.
   browserAppWindow.on('closed', function () {
@@ -221,14 +222,14 @@ let createTimerAppWindow = () => {
     slashes: true
   }));
 
-  timerAppWindow.webContents.openDevTools();
+  // timerAppWindow.webContents.openDevTools();
 
 
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-// mainWindow.once('ready-to-show', () => {
-// mainWindow.show()
-// })
+  timerAppWindow.once('ready-to-show', () => {
+  timerAppWindow.show()
+})
 
 // Emitted when the window is closed.
   timerAppWindow.on('closed', function () {
@@ -253,14 +254,14 @@ let createVideoAppWindow = () => {
     slashes: true
   }));
 
-  videoAppWindow.webContents.openDevTools();
+  // videoAppWindow.webContents.openDevTools();
 
 
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-// mainWindow.once('ready-to-show', () => {
-// mainWindow.show()
-// })
+  videoAppWindow.once('ready-to-show', () => {
+  videoAppWindow.show()
+})
 
 // Emitted when the window is closed.
   videoAppWindow.on('closed', function () {
@@ -311,4 +312,40 @@ ipcMain.on('app-init', event => {
     }, 2000)
   }
   mainWindow.show()
+})
+
+// MUSIC PLAYER
+ipcMain.on('create-music-app', event => {
+  if (musicPlayerAppWindow) return
+  createMusicPlayerAppWindow()
+})
+
+// GALLERY APP
+ipcMain.on('create-gallery-app', event => {
+  if (galleryAppWindow) return
+  createGalleryAppWindow()
+})
+
+// UBER APP
+ipcMain.on('create-uber-app', event => {
+  if (uberAppWindow) return
+  createUberAppWindow()
+})
+
+// BROWSER APP
+ipcMain.on('create-browser-app', event => {
+  if (browserAppWindow) return
+  createBrowserAppWindow()
+})
+
+// TIMER APP
+ipcMain.on('create-timer-app', event => {
+  if (timerAppWindow) return
+  createTimerAppWindow()
+})
+
+// VIDEO APP
+ipcMain.on('create-video-app', event => {
+  if (videoAppWindow) return
+  createVideoAppWindow()
 })
