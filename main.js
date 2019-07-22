@@ -11,8 +11,16 @@ const app = electron.app; //Module to create native browser window
 const ipcMain = electron.ipcMain
 
 
-let mainWindow; // Global reference to window object
-let splashWindow;
+let mainWindow // Global reference to window object
+let splashWindow
+let musicPlayerAppWindow
+let galleryAppWindow
+let uberAppWindow
+let browserAppWindow
+let timerAppWindow
+let videoAppWindow
+
+const BrowserWindow = electron.BrowserWindow;
 
 let createSplashWindow = () => {
   splashWindow = new BrowserWindow({
@@ -38,44 +46,6 @@ let createSplashWindow = () => {
     createWindow();
   })
 }
-
-
-
-
-// Menu Template definition
-// let template = [{
-//   label: 'Power',
-//   submenu: [{
-//     label: 'Sleep'
-//   }, 
-//   {
-//     label: 'Shut Down'
-//   }]
-// }, {
-//   label: 'About',
-//   submenu: [{
-//     label: 'Version'
-//   }, {
-//     label: 'Check for Update'
-//   }]
-// }]
-// // Snippet to take care of Mac menu behaviour
-// if (process.platform === 'darwin') {
-//   const name = electron.app.getName()
-//   template.unshift({
-//     label: name,
-//     submenu: [{
-//       label: 'Quit',
-//       accelerator: 'Command+Q',
-//       click: function () {
-//         app.quit()
-//       }
-//     }]
-//   })
-// }
-
-const BrowserWindow = electron.BrowserWindow;
-
 
 let createWindow = () => {
     mainWindow = new BrowserWindow({ 
@@ -109,8 +79,200 @@ let createWindow = () => {
   });
 }
 
-const Menu = electron.Menu
+let createMusicPlayerAppWindow = () => {
+  musicPlayerAppWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450 
+  }); 
 
+  musicPlayerAppWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/musicPlayer.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // musicPlayerAppWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+  musicPlayerAppWindow.once('ready-to-show', () => {
+  musicPlayerAppWindow.show()
+  
+})
+
+// Emitted when the window is closed.
+  musicPlayerAppWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  musicPlayerAppWindow = null
+  });
+}
+
+let createGalleryAppWindow = () => {
+  galleryAppWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450 
+  }); 
+
+  galleryAppWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/gallery.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // galleryAppWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+  galleryAppWindow.once('ready-to-show', () => {
+  galleryAppWindow.show()
+})
+
+// Emitted when the window is closed.
+  galleryAppWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  galleryAppWindow = null
+  });
+}
+
+let createUberAppWindow = () => {
+  uberAppWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450 
+  }); 
+
+  uberAppWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/uber.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // uberAppWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+  uberAppWindow.once('ready-to-show', () => {
+  uberAppWindow.show()
+})
+
+// Emitted when the window is closed.
+  uberAppWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  uberAppWindow = null
+  });
+}
+
+let createBrowserAppWindow = () => {
+  browserAppWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450 
+  }); 
+
+  browserAppWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/browser.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // browserAppWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+  browserAppWindow.once('ready-to-show', () => {
+  browserAppWindow.show()
+})
+
+// Emitted when the window is closed.
+  browserAppWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  browserAppWindow = null
+  });
+}
+
+let createTimerAppWindow = () => {
+  timerAppWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450 
+  }); 
+
+  timerAppWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/timer.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // timerAppWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+  timerAppWindow.once('ready-to-show', () => {
+  timerAppWindow.show()
+})
+
+// Emitted when the window is closed.
+  timerAppWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  timerAppWindow = null
+  });
+}
+
+let createVideoAppWindow = () => {
+  videoAppWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450 
+  }); 
+
+  videoAppWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/video.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // videoAppWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+  videoAppWindow.once('ready-to-show', () => {
+  videoAppWindow.show()
+})
+
+// Emitted when the window is closed.
+  videoAppWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  videoAppWindow = null
+  });
+}
+
+const Menu = electron.Menu
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -152,4 +314,40 @@ ipcMain.on('app-init', event => {
     }, 2000)
   }
   mainWindow.show()
+})
+
+// MUSIC PLAYER
+ipcMain.on('create-music-app', event => {
+  if (musicPlayerAppWindow) return
+  createMusicPlayerAppWindow()
+})
+
+// GALLERY APP
+ipcMain.on('create-gallery-app', event => {
+  if (galleryAppWindow) return
+  createGalleryAppWindow()
+})
+
+// UBER APP
+ipcMain.on('create-uber-app', event => {
+  if (uberAppWindow) return
+  createUberAppWindow()
+})
+
+// BROWSER APP
+ipcMain.on('create-browser-app', event => {
+  if (browserAppWindow) return
+  createBrowserAppWindow()
+})
+
+// TIMER APP
+ipcMain.on('create-timer-app', event => {
+  if (timerAppWindow) return
+  createTimerAppWindow()
+})
+
+// VIDEO APP
+ipcMain.on('create-video-app', event => {
+  if (videoAppWindow) return
+  createVideoAppWindow()
 })

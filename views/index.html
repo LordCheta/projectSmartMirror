@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Enyo</title>
-    <link rel="stylesheet" href="./assets/home.css">
+    <link rel="stylesheet" href="./styles/home.css">
 </head>
 <body>
     <section class="desktop">
@@ -22,7 +22,7 @@
                 <ul>
                     <li><img src="./assets/search.svg" alt="search"></li>
                     <li><img src="./assets/mic.svg" alt="mic"></li>
-                    <li><img src="./assets/menu.svg" alt="menu"></li>
+                    <li><img id="menuBtn" src="./assets/menu.svg" alt="menu"></li>
                 </ul>
             </nav>
         </div>
@@ -59,6 +59,28 @@
         <!-- <h1 id="test">Hi, Lord Cheta</h1> -->
         <!-- <p id="testb">you look sexy today ;)</p> -->
         
+    </section>
+
+    <section id="menu">
+        <nav id="menuTopBtns">
+            <ul>
+                <li><img class="menuTopIcons" id="closeMenuBtn" src="./assets/close.svg" alt=""></li>
+                <li><img class="menuTopIcons" src="./assets/info.svg" alt=""></li>
+                <li><img class="menuTopIcons" src="./assets/sleep.svg" alt=""></li>
+                <li><img class="menuTopIcons" src="./assets/power.svg" alt=""></li>
+            </ul>
+        </nav>
+        <nav id="menuAppsList">
+            <ul>
+                <li><a id="musicApp" href="#">Music</a></li>
+                <li><a id="galleryApp" href="#">Gallery</a></li>
+                <li><a id="uberApp" href="#">Uber</a></li>
+                <li><a id="browserApp" href="#">Browser</a></li>
+                <li><a id="timerApp" href="#">Timer</a></li>
+                <li><a id="videoApp" href="#">Videos</a></li>
+            </ul>
+        </nav>
+
     </section>
     
 

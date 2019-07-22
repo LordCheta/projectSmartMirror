@@ -1,6 +1,6 @@
 @font-face {
     font-family: poppins;
-    src: url('./poppins.woff2');
+    src: url('../assets/poppins.woff2');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

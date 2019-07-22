@@ -39,7 +39,7 @@ let getWeather = async () => {
         let details = await axios.default.get(url)
         return details.data;
     } catch (error) {
-        throw error
+        return error
     }
 }
     
@@ -50,7 +50,7 @@ let displayWeather = async () => {
         let temp = tempCel.toFixed(0);
         console.log(res)
     } catch (error) {
-        throw error
+        return error
     }
     
 }
@@ -74,18 +74,32 @@ this.getNews = async() => {
         let details = await axios.default.get(url)
         return details.data;
     } catch (error) {
-        throw error
+        return error
     } 
 }
     
 this.displayNews = async() => {
     try {
         let res = await this.getNews()
-        console.log(res)
+        // render result to UI
     } catch (error) {
-        throw error
+        return error
     }  
 }
 this.displayNews();
+
+
+// menu toggling
+let toggleMenu = () => {
+    if (dom.menuCanvas.style.display == 'none') {  
+        dom.menuCanvas.style.display = 'block'
+        return 
+    }
+    dom.menuCanvas.style.display = 'none'
+    
+}
+
+dom.menuBtn.addEventListener('click', toggleMenu)
+dom.closeMenuBtn.addEventListener('click', toggleMenu)
 
 };
