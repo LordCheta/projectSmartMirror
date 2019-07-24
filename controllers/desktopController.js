@@ -12,6 +12,7 @@ window.onload = () => {
         let desktopDate = new Date();
         // for the hour
         let hour = desktopDate.getHours();
+        if (hour == 12) amPm = 'pm';
         if ( hour > 12 ) {
             hour -= 12;
             amPm = 'pm';
