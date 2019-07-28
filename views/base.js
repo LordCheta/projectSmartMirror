@@ -10,5 +10,13 @@ module.exports = {
     uberApp: document.querySelector('#uberApp'),
     browserApp: document.querySelector('#browserApp'),
     timerApp: document.querySelector('#timerApp'),
-    videoApp: document.querySelector('#videoApp')
+    videoApp: document.querySelector('#videoApp'),
+    player: document.querySelector('.player'),
+    video: document.querySelector('.viewer'),
+    progress: document.querySelector('.progress'),
+    progressBar: document.querySelector('.progressFilled'),
+    toggle: document.querySelector('.toggle'),
+    skipButtons: document.querySelectorAll('[data-skip]'),
+    ranges: document.querySelectorAll('.playerSlider')
+
 }

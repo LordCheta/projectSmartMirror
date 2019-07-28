@@ -245,7 +245,7 @@ let createVideoAppWindow = () => {
     show: false,
     backgroundColor: 'cyan',
     width: 800, 
-    height: 450 
+    height: 500 
   }); 
 
   videoAppWindow.loadURL(url.format({
