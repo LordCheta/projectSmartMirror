@@ -84,7 +84,8 @@ let createMusicPlayerAppWindow = () => {
     show: false,
     backgroundColor: 'cyan',
     width: 800, 
-    height: 450 
+    height: 450,
+    parent: mainWindow
   }); 
 
   musicPlayerAppWindow.loadURL(url.format({
@@ -117,7 +118,8 @@ let createGalleryAppWindow = () => {
     show: false,
     backgroundColor: 'cyan',
     width: 800, 
-    height: 450 
+    height: 450,
+    parent: mainWindow
   }); 
 
   galleryAppWindow.loadURL(url.format({
@@ -149,7 +151,8 @@ let createUberAppWindow = () => {
     show: false,
     backgroundColor: 'cyan',
     width: 800, 
-    height: 450 
+    height: 450,
+    parent: mainWindow
   }); 
 
   uberAppWindow.loadURL(url.format({
@@ -181,7 +184,8 @@ let createBrowserAppWindow = () => {
     show: false,
     backgroundColor: 'cyan',
     width: 800, 
-    height: 450 
+    height: 450,
+    parent: mainWindow
   }); 
 
   browserAppWindow.loadURL(url.format({
@@ -213,7 +217,8 @@ let createTimerAppWindow = () => {
     show: false,
     backgroundColor: 'cyan',
     width: 800, 
-    height: 450 
+    height: 450,
+    parent: mainWindow
   }); 
 
   timerAppWindow.loadURL(url.format({
@@ -245,7 +250,8 @@ let createVideoAppWindow = () => {
     show: false,
     backgroundColor: 'cyan',
     width: 800, 
-    height: 500 
+    height: 500, 
+    parent: mainWindow
   }); 
 
   videoAppWindow.loadURL(url.format({

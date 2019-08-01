@@ -5,6 +5,7 @@ module.exports = {
     menuCanvas: document.querySelector('#menu'),
     menuBtn: document.querySelector('#menuBtn'),
     closeMenuBtn: document.querySelector('#closeMenuBtn'),
+    infoMenuBtn: document.querySelector('#infoMenuBtn'),
     musicApp: document.querySelector('#musicApp'),
     galleryApp: document.querySelector('#galleryApp'),
     uberApp: document.querySelector('#uberApp'),
@@ -18,5 +19,4 @@ module.exports = {
     toggle: document.querySelector('.toggle'),
     skipButtons: document.querySelectorAll('[data-skip]'),
     ranges: document.querySelectorAll('.playerSlider')
-
 }
