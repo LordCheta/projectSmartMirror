@@ -90,17 +90,4 @@ this.displayNews = async() => {
 this.displayNews();
 
 
-// menu toggling
-let toggleMenu = () => {
-    if (dom.menuCanvas.style.display == 'none') {  
-        dom.menuCanvas.style.display = 'block'
-        return 
-    }
-    dom.menuCanvas.style.display = 'none'
-    
 }
-
-dom.menuBtn.addEventListener('click', toggleMenu)
-dom.closeMenuBtn.addEventListener('click', toggleMenu)
-
-};
