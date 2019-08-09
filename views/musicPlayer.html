@@ -6,11 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Music Player</title>
     <link rel="stylesheet" href="./styles/home.css">
-    <link rel="stylesheet" href="./styles/p.css">
     <link rel="stylesheet" href="./styles/musicPlayer.css">
 </head>
 <body>
-    <h1 class="ph">MUSIC PLAYER</h1>
+    <div id="musicMenu">
+        <img src="./assets/musicMenu.svg" id="musicMenuIcon" alt="music menu icon">
+    </div>
+
+    <div id="albumArt">
+        <img id="albumArtImage" src="../devAssets/songart.jpg" alt="album art">
+        <p id="artistName">barlow girl</p>
+        <p id="songTitle">he walked away</p>
+
+        <audio controls>
+            <source src="../devAssets/barlow-girl.mp3">
+        </audio>
+    </div>
 
 
     <script type="module">
