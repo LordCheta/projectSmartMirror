@@ -5,10 +5,18 @@ module.exports = {
     menuCanvas: document.querySelector('#menu'),
     menuBtn: document.querySelector('#menuBtn'),
     closeMenuBtn: document.querySelector('#closeMenuBtn'),
+    infoMenuBtn: document.querySelector('#infoMenuBtn'),
     musicApp: document.querySelector('#musicApp'),
     galleryApp: document.querySelector('#galleryApp'),
     uberApp: document.querySelector('#uberApp'),
     browserApp: document.querySelector('#browserApp'),
     timerApp: document.querySelector('#timerApp'),
-    videoApp: document.querySelector('#videoApp')
+    videoApp: document.querySelector('#videoApp'),
+    player: document.querySelector('.player'),
+    video: document.querySelector('.viewer'),
+    progress: document.querySelector('.progress'),
+    progressBar: document.querySelector('.progressFilled'),
+    toggle: document.querySelector('.toggle'),
+    skipButtons: document.querySelectorAll('[data-skip]'),
+    ranges: document.querySelectorAll('.playerSlider')
 }
