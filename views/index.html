@@ -21,7 +21,8 @@
             <nav>
                 <ul>
                     <li><img src="./assets/search.svg" alt="search"></li>
-                    <li><img src="./assets/mic.svg" alt="mic"></li>
+                    <li><span id="micAlert"></span><img id="mic" src="./assets/mic.svg" alt="mic"></li>
+                    
                     <li><img id="menuBtn" src="./assets/menu.svg" alt="menu"></li>
                 </ul>
             </nav>
@@ -91,6 +92,7 @@
         require('../renderers/renderer.js');
         require('../controllers/desktopController.js')
         require('../controllers/menuExtrasController.js')
+        require('../voice/entry.js')
     </script>
 </body>
 </html>

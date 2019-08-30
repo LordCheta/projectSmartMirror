@@ -19,6 +19,16 @@ body{
     grid-template-rows: auto, auto, auto, auto, 200px;
     align-content: space-around;
 }
+
+#micAlert {
+    display: none;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 7px;
+    border-radius: 5px;
+    font-weight:400;
+    font-family: poppins;
+}
 #dateTimeDisplay{
     grid-column: 1 / span 1
 }
