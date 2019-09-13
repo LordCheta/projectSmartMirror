@@ -83,8 +83,8 @@ let createMusicPlayerAppWindow = () => {
   musicPlayerAppWindow = new BrowserWindow({ 
     show: false,
     backgroundColor: 'cyan',
-    width: 800, 
-    height: 450,
+    maxWidth: 400,
+    maxHeight: 600
   }); 
 
   musicPlayerAppWindow.loadURL(url.format({

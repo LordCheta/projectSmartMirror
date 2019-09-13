@@ -1,0 +1,29 @@
+#musicMenuIcon{
+    height: 10%;
+    width: 10%;
+}
+#albumArt{
+    text-align: center;
+}
+#albumArtImage{
+    width: 150px;
+    height: 150px;
+}
+#artistName{
+    font-family: poppins;
+    color: #ffffff;
+    margin-top: 5%;
+    font-size: 5vw;
+    font-weight: 200;
+    text-transform: capitalize;
+    letter-spacing: 0.17em;
+}
+#songTitle{
+    font-family: poppins;
+    color: #ffffff;
+    margin-top: 5%;
+    font-size: 3vw;
+    font-weight: 100;
+    text-transform: capitalize;
+    letter-spacing: 0.12
+}
