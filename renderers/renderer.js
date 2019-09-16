@@ -5,10 +5,6 @@ const { ipcRenderer } = require('electron')
 const dom = require('../views/base')
 const menuExtrasController = require('../controllers/menuExtrasController');
 
-setTimeout(() => {
-    ipcRenderer.send('app-init')
-  }, 2000)
-
 dom.musicApp.addEventListener('click', () => {
   ipcRenderer.send('create-music-app')
   menuExtrasController.toggleMenu();
