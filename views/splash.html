@@ -27,6 +27,10 @@
         })
 
         ipcRenderer.send('get-version')
+
+        setTimeout(() => {
+            ipcRenderer.send('app-init')
+        }, 2000)
     </script>
 </body>
 </html>
