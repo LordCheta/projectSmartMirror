@@ -18,5 +18,12 @@ module.exports = {
     progressBar: document.querySelector('.progressFilled'),
     toggle: document.querySelector('.toggle'),
     skipButtons: document.querySelectorAll('[data-skip]'),
-    ranges: document.querySelectorAll('.playerSlider')
+    ranges: document.querySelectorAll('.playerSlider'),
+    loadingWeather: document.querySelector('.loadingWeather'),
+    temp:document.querySelector('#temp'),
+    tempIcon:document.querySelector('#tempIcon'),
+    tempDescription: document.querySelector('#tempDescription'),
+    tempImage: document.querySelector('#tempImage'),
+    news: document.querySelector('#news'),
+    loadingNews: document.querySelectorAll('.loadingWeather')[1]
 }
