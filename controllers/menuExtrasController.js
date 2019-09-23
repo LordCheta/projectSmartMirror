@@ -25,3 +25,7 @@ let showSytemInfo = () => {
 }
 
 dom.infoMenuBtn.addEventListener('click', showSytemInfo)
+
+module.exports = {
+    toggleMenu
+}
