@@ -31,11 +31,12 @@
 
         <!-- Weather Display -->
         <div id="weatherDisplay">
-            <div id="loadingWeather">
-                <img id="wSpin" src="./assets/load-icon.svg" alt="loading-weather">
-                <p id="wText">..loading weather</p>
+            <div class="loadingWeather">
+                <img class="wSpin" src="./assets/load-icon.svg" alt="loading-weather">
+                <p class="wText">..loading weather</p>
             </div>
-            <p id="temp"></p>
+            
+            <span id="tempImage"></span><p id="temp"></p>
             <p id="tempDescription"></p>
         </div>
         <!-- End Weather Display -->
@@ -50,9 +51,12 @@
         <!-- News Display -->
         <div id="newsDisplay">
             <h1 id="newsTitle">TRENDING</h1>
-            <div id="loadingWeather">
-                <img id="wSpin" src="./assets/load-icon.svg" alt="loading-weather">
-                <p id="wText">..fetching headlines</p>
+            <div class="loadingWeather">
+                <img class="wSpin" src="./assets/load-icon.svg" alt="loading-weather">
+                <p class="wText">..fetching headlines</p>
+            </div>
+            <div id="news">
+                
             </div>
         </div>
         <!-- End News Display -->
@@ -92,7 +96,6 @@
         require('../renderers/renderer.js');
         require('../controllers/desktopController.js')
         require('../controllers/menuExtrasController.js')
-        require('../voice/entry.js')
     </script>
 </body>
 </html>

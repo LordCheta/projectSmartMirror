@@ -61,31 +61,36 @@ body{
 }
 #weatherDisplay{
     grid-row: auto;
-    grid-column: 1 / span 1
+    grid-column: 1 / span 1;
+    margin-top: -10%;
 }
-#loadingWeather{
+.loadingWeather{
     margin-left: 12%;
     color: var(--white);
     font-family: poppins;
     font-weight: 100;
     font-size: 10px;
 }
-#wText{
+.wText{
     margin-top: -1%;
     margin-left: -6%;
 }
 
 #temp{
+    width: 50px;
     font-family: poppins;
     font-weight: 200;
     color: var(--white);
-    margin-top: -3%;
+    margin-top: -7%;
+    margin-left: 10%;
 }
+
 #tempDescription{
     font-family: poppins;
     font-weight: 200;
     color: var(--white);
-    margin-top: -3%;
+    margin-top: -2%;
+    margin-left: 1%;
 }
 #calenderDisplay{
     grid-column: 1 / span 1;
@@ -110,6 +115,10 @@ body{
     font-weight: 200;
     color: var(--white);
     border-bottom: 1px solid var(--white)
+}
+#news {
+    color: var(--white);
+    font-family: poppins;
 }
 #test{
     text-align: center;

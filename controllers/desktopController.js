@@ -40,18 +40,22 @@ let getWeather = async () => {
         let details = await axios.default.get(url)
         return details.data;
     } catch (error) {
-        return error
+        return error;
     }
 }
     
 let displayWeather = async () => {
     try {
-        let res = await getWeather()
+        let res = await getWeather();
         let tempCel = res.main.temp - 273.15;
         let temp = tempCel.toFixed(0);
-        console.log(res)
+        let iconURL = `http://openweathermap.org/img/w/${res.weather[0].icon}.png`;
+        dom.loadingWeather.style.display = 'none';
+        dom.tempImage.innerHTML = `<img src='${iconURL}'/>`
+        dom.temp.innerHTML = `${temp}&#8451;`;
+        dom.tempDescription.innerHTML = res.weather[0].description;
     } catch (error) {
-        return error
+        return error;
     }
     
 }
@@ -69,8 +73,8 @@ displayWeather();
 
 
 // Method controlling news headlines display
-this.getNews = async() => {
-    const url = 'https://newsapi.org/v2/sources?language=en&country=ng&apiKey='+ key.news
+let getNews = async() => {
+    const url = 'https://newsapi.org/v2/top-headlines?language=en&country=ng&apiKey='+ key.news
     try {
         let details = await axios.default.get(url)
         return details.data;
@@ -79,15 +83,20 @@ this.getNews = async() => {
     } 
 }
     
-this.displayNews = async() => {
+let displayNews = async() => {
     try {
-        let res = await this.getNews()
-        // render result to UI
+        let res = await getNews()
+        let newsList = res.articles;
+        dom.loadingNews.style.display = 'none';
+        for(let i = 0; i<5; i++){
+            dom.news.innerHTML += `<p class="newsHeadline">${newsList[i].description}</p>
+            <p class="newsSource">${newsList[i].source.name}</p>`
+        }
     } catch (error) {
         return error
     }  
 }
-this.displayNews();
+displayNews();
 
 
 }
