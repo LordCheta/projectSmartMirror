@@ -43,7 +43,29 @@
 
         <!-- Calender/TODO Display -->
         <div id="calenderDisplay">
-            <h1 id="calenderTitle">CALENDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><img src="./assets/plus.svg" alt=""></span></h1>
+            <h1 id="calenderTitle">CALENDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="openModal"><img src="./assets/plus.svg" alt=""></span></h1>
+            <div id="todoModal" class="todoModal">
+                <div class="todoModalContent">
+                    <header id="todoHeader">
+                        <span>TODOS</span>
+                        <span class="todoClose">&times;</span>
+                    </header>
+                    
+                    <div id="todos">
+                        <p><input type="checkbox" name="todo1" id="" class="todo"> Some todo list</p>
+                        <p><input type="checkbox" name="todo2" id="" class="todo"> Some todo list</p>
+                        <p><input type="checkbox" name="todo3" id="" class="todo"> Some todo list</p>
+                        <p><input type="checkbox" name="todo4" id="" class="todo"> Some todo list</p>
+                        <p><input type="checkbox" name="todo5" id="" class="todo"> Some todo list</p>
+                    </div>
+
+                    <div id="addTodo">
+                        <input type="text" name="" id="" placeholder="type todo">
+                        <input type="datetime" name="" id="" placeholder="select due date">
+                        <button type="submit">Add todo</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- End Calender/TODO Display -->
 
