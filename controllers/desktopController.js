@@ -82,22 +82,39 @@ let displayNews = async() => {
         }
         dom.loadingNews.style.display = 'none';
     } catch (error) {
-        return error
+        return error;
     }  
 }
 displayNews();
 
 
-
 // Method controlling calender todo list
 // 1. Add button is clicked and a modal pops up
+const myTodos = [
+    {todo:"dfagadf", dueDate:"date", }
+]
+let openTodoModal = () => {
+    dom.todoModal.style.display = 'block';
+}
+dom.openModal.onclick = openTodoModal;
+
+let closeTodoModal = () => {
+    dom.todoModal.style.display = 'none';
+}
+dom.todoClose.onclick = closeTodoModal;
+
+let displayTodos = (numberOfTodos) => {
+    
+}
+let addTodo  = () => {
+
+}
+let deleteTodo = () => {
+
+}
 // 2. Title of todo, date and time of start of todo is set
 // 3. Modal has cancel(x[close] is also included) & add button
 // 4. When todo is added, on the right is a check box that indicates completion
 // 5. Completed todos are either striked through and brought down the list or removed
 //    entirely from the list, an alert should be shown to confirm this choice
-
-let todo = () => {
-    
-}
 }
