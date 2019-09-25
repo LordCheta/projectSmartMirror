@@ -25,5 +25,8 @@ module.exports = {
     tempDescription: document.querySelector('#tempDescription'),
     tempImage: document.querySelector('#tempImage'),
     news: document.querySelector('#news'),
-    loadingNews: document.querySelectorAll('.loadingWeather')[1]
+    loadingNews: document.querySelectorAll('.loadingWeather')[1],
+    openModal: document.querySelector('#openModal'),
+    todoModal: document.querySelector('#todoModal'),
+    todoClose: document.querySelector('#todoClose'),
 }
