@@ -40,7 +40,7 @@ let getWeather = async () => {
         return error;
     }
 }
-    
+  
 let displayWeather = async () => {
     try {
         let res = await getWeather(); 
@@ -110,7 +110,7 @@ let displayTodos = () => {
     dom.todoDiv.innerHTML = '';
     const myTodos = JSON.parse(window.localStorage.getItem('myTodos')) || [];
     for (let i = 0; i < myTodos.length; i++){
-        if (!(myTodos[i].deleted)){
+        if (myTodos[i].deleted == false){
         dom.todoDiv.innerHTML += `
         <div id="aTodoContainer">
         <label><input type="checkbox" name="" id="${myTodos[i].id}" class="todo"> ${myTodos[i].todoText}</label>
@@ -120,7 +120,8 @@ let displayTodos = () => {
         <div id="aTodoContainer" class="lineThrough">
         <label><input type="checkbox" name="" id="${myTodos[i].id}" class="todo" checked> ${myTodos[i].todoText}</label>
         <p>${myTodos[i].dueDate}</p></div>`
-    }}
+        }
+    }
 }
 
 //module to display just top five unchecked todos on desktop
@@ -160,69 +161,44 @@ let addTodo  = () => {
     myTodos.unshift(todo);
     window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
     displayTodos(myTodos.length);
+    console.log(myTodos)
 }
-dom.addTodoBtn.onclick = addTodo;
+dom.addTodoBtn.onclick = addTodo;        
 
-let deleteTodo = () => {
-    const myTodos = JSON.parse(window.localStorage.getItem('myTodos')) || [];
+let deleteTodo = (e) => {
+    let myTodos = JSON.parse(window.localStorage.getItem('myTodos')) || [];
     //when a todo is checked, strikethrough
     //everything the modal is opened/closed, rerender from storage
     //after every thirty days, delete from session storage
     //select all where strikethrough is null
-    // for(let todo of dom.todos){
-        //add for modal
-        dom.todoDiv.addEventListener("click", function(e){          
-            if (e.target.checked == true){
-                e.target.parentNode.parentNode.classList.add("lineThrough");
-                // search for todo in storage and add deleted property
-                for (let todoObj of myTodos) {
-                    if (todoObj.id == e.target.id){
-                        todoObj.deleted = true;
-                        break;
-                    }
-                }
-            } else {
-                e.target.parentNode.parentNode.classList.remove("lineThrough");
+    if (e.target.checked == true){
+        e.target.parentNode.parentNode.classList.add("lineThrough");
+        // search for todo in storage and add deleted property
+        for (let todoObj of myTodos) {
+            if (todoObj.id == e.target.id){
+                todoObj.deleted = true;
+                console.log(myTodos)
+                window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
+                break;
 
-                // search for todo in storage and add deleted property
-                for (let todoObj of myTodos) {
-                    if (todoObj.id == e.target.id){
-                        todoObj.deleted = false;
-                        break;
-                    }
-                }
             }
-            window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
-        });
+        }
+    } else {
+        e.target.parentNode.parentNode.classList.remove("lineThrough");
 
-        //for top5
-        dom.top5Todos.addEventListener("click", function(e){          
-            if (e.target.checked == true){
-                e.target.parentNode.parentNode.classList.add("lineThrough");
-                
-                // search for todo in storage and add deleted property
-                for (let todoObj of myTodos) {
-                    if (todoObj.id == e.target.id){
-                        todoObj.deleted = true;
-                        break;
-                    }
-                }
-            } else {
-                e.target.parentNode.parentNode.classList.remove("lineThrough");
-
-                // search for todo in storage and add deleted property
-                for (let todoObj of myTodos) {
-                    if (todoObj.id == e.target.id){
-                        todoObj.deleted = false;
-                        break;
-                    }
-                }
+        // search for todo in storage and add deleted property
+        for (let todoObj of myTodos) {
+            if (todoObj.id == e.target.id){
+                todoObj.deleted = false;
+                window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
+                console.log(myTodos)
+                break;
             }
-            window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
-        });
-    // }
+        }
+    };
 }
-deleteTodo();
+dom.todoDiv.onclick = deleteTodo;
+dom.top5Todos.onclick = deleteTodo;
 
 //module to set default date
 (()=> {
