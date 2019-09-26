@@ -184,13 +184,25 @@ let createBrowserAppWindow = () => {
     height: 450,
   }); 
 
+    // remove 'x-frame-options' header to allow embedding external pages into an 'iframe'
+    browserAppWindow.webContents.session.webRequest.onHeadersReceived({}, (details, callback) => {
+      if(details.responseHeaders['x-frame-options']) {
+          delete details.responseHeaders['x-frame-options']
+      }
+
+      if(details.responseHeaders['X-Frame-Options']) {
+        delete details.responseHeaders['X-Frame-Options']
+    }
+      callback({ cancel: false, responseHeaders: details.responseHeaders });
+    });
+
   browserAppWindow.loadURL(url.format({
     pathname: path.join(__dirname, '/views/browser.html'),
     protocol: 'file:',
     slashes: true
   }));
 
-  // browserAppWindow.webContents.openDevTools();
+  browserAppWindow.webContents.openDevTools();
 
 
 
