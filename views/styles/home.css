@@ -62,7 +62,7 @@ body{
 #weatherDisplay{
     grid-row: auto;
     grid-column: 1 / span 1;
-    margin-top: -10%;
+    margin-top: -8%;
 }
 .loadingWeather{
     margin-left: 12%;
@@ -104,14 +104,24 @@ body{
     color: var(--white);
     border-bottom: 1px solid var(--white)
 }
+
 .todoModal {
-    /* display: none; */
+    display: none;
     color: var(--white);
     font-family: poppins;
     z-index: 1;
     width: 100%;
     height: 100%;
     overflow: auto;
+}
+
+#top5Todos {
+    display: block;
+    color: var(--white);
+    font-family: poppins;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
 }
 .todoModalContent {
     padding: 3% 5%;
@@ -133,27 +143,33 @@ body{
     font-size: 30px;
     font-weight: bold;
 }
+
 .todo {
     transform: scale(1.3)
 }
 #todos {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-block-start: 1em;
 }
-#todos label {
+#aTodoContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#todos label, #top5Todos label {
     grid-column: 1 / span 3;
     margin-block-start: 0;
     margin-block-end: 0.7em;
     border-bottom: 0.1px solid #eee;
     padding-bottom: 0.8em;
 }
-#todos p {
+#todos p, #top5Todos p {
     grid-column: 4;
     margin-block-start: 0;
     margin-block-end: 0.7em;
     border-bottom: 0.1px solid #eee;
     padding-bottom: 0.8em;
+}
+.lineThrough {
+    text-decoration: line-through;
 }
 #addTodo {
     display: grid;
@@ -199,12 +215,15 @@ body{
     font-family: poppins;
 }
 .newsHeadline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: justify;
     margin-block-end: 0;
+    font-weight: 400;
 }
 .newsSource {
     margin-block-start: 0;
-    font-size: 15px; 
+    font-size: 13px;
+    font-weight: 100; 
 }
 #test{
     text-align: center;

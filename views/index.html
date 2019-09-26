@@ -43,7 +43,11 @@
 
         <!-- Calender/TODO Display -->
         <div id="calenderDisplay">
-            <h1 id="calenderTitle">CALENDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="openModal"><img src="./assets/plus.svg" alt=""></span></h1>
+            <h1 id="calenderTitle">TODOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="openModal"><img src="./assets/plus.svg" alt=""></span></h1>
+            <div id="top5Todos">
+
+            </div>
+
             <div id="todoModal" class="todoModal">
                 <div class="todoModalContent">
                     <header id="todoHeader">
@@ -52,27 +56,13 @@
                     </header>
                     
                     <div id="todos">
-                        <label><input type="checkbox" name="todo1" id="" class="todo"> Some todo list later</label>
-                        <p>tomorrow</p>
-
-                        <label><input type="checkbox" name="todo2" id="" class="todo"> Some todo list</label>
-                        <p>tomorrow</p>
-                        
-                        <label><input type="checkbox" name="todo3" id="" class="todo"> Some todo list</label>
-                        <p>tomorrow</p>
-
-                        <label><input type="checkbox" name="todo4" id="" class="todo"> Some todo list</label>
-                        <p>tomorrow</p>
-
-                        <label><input type="checkbox" name="todo5" id="" class="todo"> Some todo list</label>
-                        <p>tomorrow</p>
                     </div>
 
-                    <div id="addTodo">
-                        <input type="text" name="" id="addTodoText" placeholder="type todo">
-                        <input type="datetime" name="" id="addTodoDate" placeholder="select due date">
-                        <button type="submit" id="addTodoBtn">Add todo</button>
-                    </div>
+                    <form id="addTodo" onsubmit="return false">
+                        <input type="text" name="" id="addTodoText" placeholder="type todo" required>
+                        <input type="date" name="" id="addTodoDate" placeholder="select due date" required>
+                        <input type="submit" id="addTodoBtn" value="Add Todo">
+                    </form>
                 </div>
             </div>
         </div>

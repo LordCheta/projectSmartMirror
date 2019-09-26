@@ -29,4 +29,11 @@ module.exports = {
     openModal: document.querySelector('#openModal'),
     todoModal: document.querySelector('#todoModal'),
     todoClose: document.querySelector('#todoClose'),
+    addTodoText: document.querySelector('#addTodoText'),
+    addTodoDate: document.querySelector('#addTodoDate'),
+    addTodoBtn: document.querySelector('#addTodoBtn'),
+    todos: document.querySelectorAll('.todo'),
+    todoDiv: document.querySelector('#todos'),
+    top5Todos: document.querySelector('#top5Todos'),
+
 }
