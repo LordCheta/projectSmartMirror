@@ -17,11 +17,23 @@
     </section>
 
     <!-- TAB CONTENT -->
-    <section>
+    <section id="tabContent">
+        <!-- these are the browser controls -->
         <span class="browserIcons" id="goBack">&#8592;</span>
         <span class="browserIcons" id="goForward">&#8594;</span>
         <!-- <span class="browserIcons" id="goHome"></span> -->
         <input id="urlInput" type="text" placeholder="type url here">
+        <span class="broswerIcons" id="goToUrl">go</span>
+
+        <!-- the iframe is used to renderer the web pages -->
+        
     </section>
+
+
+
+    <script>
+        require('../renderers/browserRenderer.js')
+        require('../controllers/browserController.js')
+    </script>
 </body>
 </html>

@@ -29,4 +29,7 @@ module.exports = {
     openModal: document.querySelector('#openModal'),
     todoModal: document.querySelector('#todoModal'),
     todoClose: document.querySelector('#todoClose'),
+    urlInput: document.querySelector('#urlInput'),
+    goToUrl: document.querySelector('#goToUrl'),
+    tabContent: document.querySelector('#tabContent')
 }
