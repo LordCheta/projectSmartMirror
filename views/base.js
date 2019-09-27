@@ -51,5 +51,11 @@ module.exports = {
     urlInput: document.querySelector('#urlInput'),
     goToUrl: document.querySelector('#goToUrl'),
     tabContent: document.querySelector('#tabContent'),
-    body: document.querySelector('body')
+    body: document.querySelector('body'),
+
+    //keyboard dom elements
+    kswitch: document.querySelector('#kswitch'),
+    kswitch2: document.querySelector('#kswitch2'),
+    letters: document.querySelector('.letters'),
+    symbols: document.querySelector('.symbols'),
 }
