@@ -50,5 +50,6 @@ module.exports = {
     //browser dom elements
     urlInput: document.querySelector('#urlInput'),
     goToUrl: document.querySelector('#goToUrl'),
-    tabContent: document.querySelector('#tabContent')
+    tabContent: document.querySelector('#tabContent'),
+    body: document.querySelector('body')
 }
