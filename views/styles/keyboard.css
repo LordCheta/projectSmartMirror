@@ -1,0 +1,42 @@
+@font-face {
+  font-family: poppins;
+  src: url('../assets/poppins.woff2');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root{
+  --white: #ffffff;
+  --black: #000000;
+}
+body{
+  background-color: var(--black);
+}
+.keyboard {
+  width: 100%;
+  height: auto;
+}
+.hide {
+  display: none;
+}
+div{
+  padding: 3px;
+}
+input {
+  font-family: poppins;
+  padding: 5px;
+  padding: 2%;
+  background-color: var(--black);
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 20px;
+  border: 2px solid white;
+  transition: background-color 1s ease-out;
+}
+input[value="spacebar"] {
+  width: 30%;
+}
+input:focus {
+  background-color: var(--white);
+  color: var(--black)
+}
