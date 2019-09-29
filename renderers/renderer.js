@@ -34,3 +34,11 @@ dom.videoApp.addEventListener('click', () => {
   ipcRenderer.send('create-video-app')
   menuExtrasController.toggleMenu();
 })
+
+dom.addTodoText.addEventListener('focus', ()=> {
+  ipcRenderer.send('create-keyboard-app');
+})
+
+dom.addTodoDate.addEventListener('focus', ()=> {
+  ipcRenderer.send('create-keyboard-app');
+})

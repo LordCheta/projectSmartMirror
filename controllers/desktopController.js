@@ -161,7 +161,6 @@ let addTodo  = () => {
     myTodos.unshift(todo);
     window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
     displayTodos(myTodos.length);
-    console.log(myTodos)
 }
 dom.addTodoBtn.onclick = addTodo;        
 
@@ -177,7 +176,6 @@ let deleteTodo = (e) => {
         for (let todoObj of myTodos) {
             if (todoObj.id == e.target.id){
                 todoObj.deleted = true;
-                console.log(myTodos)
                 window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
                 break;
 
@@ -191,7 +189,6 @@ let deleteTodo = (e) => {
             if (todoObj.id == e.target.id){
                 todoObj.deleted = false;
                 window.localStorage.setItem('myTodos', JSON.stringify(myTodos));
-                console.log(myTodos)
                 break;
             }
         }
