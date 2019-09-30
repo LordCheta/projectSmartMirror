@@ -1,10 +1,18 @@
 const dom = require('../views/base') // Object containing all DOM queries
 
 // browser methods
-let renderNewTab = () => {
-    let tablinkTemplate = `<button class="tabLinks activeTab" id="tabName">New Tab</button>`
-    
+
+// Method toggles visibility of tabs
+let toggleTab = () => {
+
 }
+
+// Method creates new tab links and tabcontent for the new tab
+let renderNewTab = () => {
+    let tablinkTemplate = `<button class="tabLinks" id="tabName">New Tab</button>`
+    let tabContentTemplate = ``
+}
+// Method renders the default tab when the browser app is opened.
 let renderTab = () => {
     let template = `
     <!-- TAB LINKS  -->
@@ -22,7 +30,7 @@ let renderTab = () => {
         <input id="urlInput" type="text" placeholder="type url here">
         <span class="broswerIcons" id="goToUrl">go</span>
 
-        <!-- the iframe is used to renderer the web pages -->
+        <!-- the iframe is used to renderer the web pages it is automatically injected below -->
         
     </section>
     `
@@ -45,13 +53,17 @@ let renderUrl = (url) => {
 window.onload = async () => {
 let renderTabAction =  await renderTab()
 
-// listerners to trigger browser methods
-console.log(renderTabAction)
-if(renderTabAction) {
-  document.querySelector('#goToUrl').addEventListener('click', () => {
-    let url = document.querySelector('#urlInput').value
-    renderUrl(url)
-    })  
+try {
+    // listerners to trigger browser methods
+    if(renderTabAction) {
+        document.querySelector('#goToUrl').addEventListener('click', () => {
+          let url = document.querySelector('#urlInput').value
+          renderUrl(url)
+          })  
+      }
+} catch (error) {
+    throw error
 }
+
 
 }
