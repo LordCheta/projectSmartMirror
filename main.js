@@ -290,9 +290,10 @@ let createKeyboardWindow = () => {
     height: 400,
     frame: false,
     resizable: false,
-    backgroundColor: '#FFF',
-    // alwaysOnTop: true,
+    
+    alwaysOnTop: true,
     show: false,
+    transparent: true
   });
 
   keyboardWindow.loadURL(url.format({
@@ -307,7 +308,7 @@ let createKeyboardWindow = () => {
     keyboardWindow.show()
     
   })
-  keyboardWindow.webContents.openDevTools();
+  // keyboardWindow.webContents.openDevTools();
 }
 
 // ---------------------END OF WINDOW CREATION INITIALIZATION---------------------------------->
