@@ -54,8 +54,13 @@ module.exports = {
     body: document.querySelector('body'),
 
     //keyboard dom elements
+    keyboard: document.querySelector('.keyboard'),
     kswitch: document.querySelector('#kswitch'),
     kswitch2: document.querySelector('#kswitch2'),
     letters: document.querySelector('.letters'),
     symbols: document.querySelector('.symbols'),
+    capitalLetters: document.querySelectorAll('.capitalLetters'),
+    smallLetters: document.querySelectorAll('.smallLetters'),
+    capsLock: document.querySelector('#capsLock'),
+    closeKeyboard: document.querySelector('#closeKeyboard')
 }

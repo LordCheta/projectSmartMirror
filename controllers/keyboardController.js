@@ -2,12 +2,27 @@ const dom = require('../views/base') // Object containing all DOM queries
 
 window.onload = () => {
   // Keyboard Funtionalities
-  console.log(dom.kswitch, dom.kswitch2)
   let keyboardSwitch = () => {
-    console.log('here')
     dom.letters.classList.toggle('hide');
     dom.symbols.classList.toggle('hide');
-  }
+  };
   dom.kswitch.onclick = keyboardSwitch;
   dom.kswitch2.onclick = keyboardSwitch;
+
+  let capsLock = () => {
+    dom.capsLock.classList.toggle('activeCapsLock');
+    dom.capitalLetters.forEach(element => {
+      element.classList.toggle('hide');
+    });
+    dom.smallLetters.forEach(element => {
+      element.classList.toggle('hide');
+    });
+  }
+  dom.capsLock.onclick = capsLock;
+
+  let keyClick = (e) => {
+    if (e.target.value == "close") return
+    return e.target.value;
+  }
+  dom.keyboard.onclick = keyClick;
 }

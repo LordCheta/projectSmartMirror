@@ -19,6 +19,7 @@ let uberAppWindow
 let browserAppWindow
 let timerAppWindow
 let videoAppWindow
+let keyboardWindow
 
 const BrowserWindow = electron.BrowserWindow;
 
@@ -203,8 +204,7 @@ let createBrowserAppWindow = () => {
   }));
 
   browserAppWindow.webContents.openDevTools();
-
-
+  console.log(browserAppWindow.webContents.id)
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
   browserAppWindow.once('ready-to-show', () => {
@@ -284,6 +284,34 @@ let createVideoAppWindow = () => {
   });
 }
 
+let createKeyboardWindow = () => {
+  keyboardWindow = new BrowserWindow({
+    width: 850,
+    height: 400,
+    frame: false,
+    resizable: false,
+    backgroundColor: '#FFF',
+    // alwaysOnTop: true,
+    show: false,
+  });
+
+  keyboardWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/keyboard.html'),
+    protocol: 'file',
+    slashes: true
+  }))
+  keyboardWindow.on('closed', () => {
+    keyboardWindow = null
+  })
+  keyboardWindow.once('ready-to-show', () => {
+    keyboardWindow.show()
+    
+  })
+  keyboardWindow.webContents.openDevTools();
+}
+
+// ---------------------END OF WINDOW CREATION INITIALIZATION---------------------------------->
+
 const Menu = electron.Menu
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -330,36 +358,50 @@ ipcMain.on('app-init', event => {
 
 // MUSIC PLAYER
 ipcMain.on('create-music-app', event => {
-  if (musicPlayerAppWindow) return
-  createMusicPlayerAppWindow()
+  if (musicPlayerAppWindow) return;
+  createMusicPlayerAppWindow();
 })
 
 // GALLERY APP
 ipcMain.on('create-gallery-app', event => {
-  if (galleryAppWindow) return
-  createGalleryAppWindow()
+  if (galleryAppWindow) return;
+  createGalleryAppWindow();
 })
 
 // UBER APP
 ipcMain.on('create-uber-app', event => {
-  if (uberAppWindow) return
-  createUberAppWindow()
+  if (uberAppWindow) return;
+  createUberAppWindow();
 })
 
 // BROWSER APP
 ipcMain.on('create-browser-app', event => {
-  if (browserAppWindow) return
-  createBrowserAppWindow()
+  if (browserAppWindow) return;
+  createBrowserAppWindow();
 })
 
 // TIMER APP
 ipcMain.on('create-timer-app', event => {
-  if (timerAppWindow) return
-  createTimerAppWindow()
+  if (timerAppWindow) return;
+  createTimerAppWindow();
 })
 
 // VIDEO APP
 ipcMain.on('create-video-app', event => {
-  if (videoAppWindow) return
-  createVideoAppWindow()
+  if (videoAppWindow) return;
+  createVideoAppWindow();
+})
+
+// KEYBOARD APP
+ipcMain.on('create-keyboard-app', (event, args) => {
+  if(keyboardWindow) return;
+  createKeyboardWindow()
+  let mainWid = eval(args).webContents.id;
+  keyboardWindow.webContents.on('did-finish-load', ()=> {
+    keyboardWindow.webContents.send('reply', mainWid);
+  })
+})
+
+ipcMain.on('keyboard-closed', event => {
+  keyboardWindow.close()
 })
