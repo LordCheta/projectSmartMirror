@@ -8,9 +8,7 @@
   --white: #ffffff;
   --black: #000000;
 }
-body{
-  background-color: var(--black);
-}
+
 .keyboard {
   width: 100%;
   height: auto;
@@ -28,6 +26,7 @@ div{
   padding: 3px;
 }
 input {
+  -webkit-app-region: no-drag;
   font-family: poppins;
   padding: 2%;
   background-color: var(--black);
