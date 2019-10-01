@@ -204,8 +204,7 @@ let createBrowserAppWindow = () => {
   }));
 
   browserAppWindow.webContents.openDevTools();
-
-
+  console.log(browserAppWindow.webContents.id)
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
   browserAppWindow.once('ready-to-show', () => {
@@ -306,8 +305,9 @@ let createKeyboardWindow = () => {
   })
   keyboardWindow.once('ready-to-show', () => {
     keyboardWindow.show()
-    createWindow();
+    
   })
+  keyboardWindow.webContents.openDevTools();
 }
 
 // ---------------------END OF WINDOW CREATION INITIALIZATION---------------------------------->
@@ -393,7 +393,15 @@ ipcMain.on('create-video-app', event => {
 })
 
 // KEYBOARD APP
-ipcMain.on('create-keyboard-app', event => {
+ipcMain.on('create-keyboard-app', (event, args) => {
   if(keyboardWindow) return;
-  createKeyboardWindow();
-});
+  createKeyboardWindow()
+  let mainWid = eval(args).webContents.id;
+  keyboardWindow.webContents.on('did-finish-load', ()=> {
+    keyboardWindow.webContents.send('reply', mainWid);
+  })
+})
+
+ipcMain.on('keyboard-closed', event => {
+  keyboardWindow.close()
+})

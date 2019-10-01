@@ -35,10 +35,14 @@ dom.videoApp.addEventListener('click', () => {
   menuExtrasController.toggleMenu();
 })
 
-dom.addTodoText.addEventListener('focus', ()=> {
-  ipcRenderer.send('create-keyboard-app');
+dom.addTodoText.addEventListener('click', ()=> {
+  ipcRenderer.send('create-keyboard-app', 'mainWindow');
 })
 
-dom.addTodoDate.addEventListener('focus', ()=> {
-  ipcRenderer.send('create-keyboard-app');
+ipcRenderer.on('reply', (event, arg) => {
+  console.log(arg)
+})
+
+ipcRenderer.on('type', function(event, arg){
+  dom.addTodoText.value += arg;
 })

@@ -8,7 +8,7 @@
 </head>
 <body>
   <section class="keyboard">
-    <input type="button" value="X" id="closeKeyboard">
+    <input type="button" value="close" id="closeKeyboard">
     <div class="letters">
       <div>
         <input type="button" value="tab">
@@ -151,7 +151,7 @@
       <div>
           <input type="button" value="abc" id="kswitch2">
           <input type="button" value="mic">
-          <input type="button" value="spacebar">
+          <input type="button" value="&nbsp;">
           <input type="button" value=".com">
           <input type="button" value="<">
           <input type="button" value=">">
@@ -201,6 +201,7 @@
   }
   </script>
   <script type="module">
+      // require('../renderers/renderer.js')
       require('../renderers/keyboardRenderer.js');
       require('../controllers/keyboardController.js')
  </script>

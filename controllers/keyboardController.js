@@ -21,7 +21,7 @@ window.onload = () => {
   dom.capsLock.onclick = capsLock;
 
   let keyClick = (e) => {
-    console.log(e.target.value || '');
+    if (e.target.value == "close") return
     return e.target.value;
   }
   dom.keyboard.onclick = keyClick;

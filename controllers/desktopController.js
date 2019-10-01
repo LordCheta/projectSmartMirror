@@ -131,7 +131,7 @@ let top5Todos = () => {
     if (myTodos.length == 0){
         dom.top5Todos.innerHTML += `
             <div id="aTodoContainer">
-            Mo todos added yet. Use the plus button above to add`
+            No todos added yet. Use the plus button above to add </div>`
     }else {
         let todosLength = myTodos.length < 5 ? myTodos.length : 5;
         for (let i = 0; i < todosLength; i++){
