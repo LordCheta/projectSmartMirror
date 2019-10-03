@@ -53,6 +53,7 @@ let renderUrl = (url) => {
 window.onload = async () => {
 let renderTabAction =  await renderTab()
 
+<<<<<<< HEAD
 try {
     // listerners to trigger browser methods
     if(renderTabAction) {
@@ -63,6 +64,14 @@ try {
       }
 } catch (error) {
     throw error
+=======
+// listerners to trigger browser methods
+if(renderTabAction) {
+  document.querySelector('#goToUrl').addEventListener('click', () => {
+    let url = document.querySelector('#urlInput').value
+    renderUrl(url)
+    })  
+>>>>>>> 6b4ceb7ef03e1412b5725a67485905b0d58c6726
 }
 
 
