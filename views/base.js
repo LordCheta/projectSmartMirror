@@ -62,5 +62,6 @@ module.exports = {
     capitalLetters: document.querySelectorAll('.capitalLetters'),
     smallLetters: document.querySelectorAll('.smallLetters'),
     capsLock: document.querySelector('#capsLock'),
-    closeKeyboard: document.querySelector('#closeKeyboard')
+    closeKeyboard: document.querySelector('#closeKeyboard'),
+    backspace: document.querySelector("input[value='spacebar']")
 }

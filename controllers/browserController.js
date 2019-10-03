@@ -46,7 +46,6 @@ window.onload = async () => {
 let renderTabAction =  await renderTab()
 
 // listerners to trigger browser methods
-console.log(renderTabAction)
 if(renderTabAction) {
   document.querySelector('#goToUrl').addEventListener('click', () => {
     let url = document.querySelector('#urlInput').value

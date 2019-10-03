@@ -8,7 +8,10 @@ const dom = require('../views/base')
   }});
   
   ipcRenderer.on('type', function(event, arg){
-    console.log(arg,'hgghg')
-    document.querySelector('#urlInput').value += arg;
-  })
+    if (arg === "backspace") {
+      document.querySelector('#urlInput').value = 
+      document.querySelector('#urlInput').value.slice(0, document.querySelector('#urlInput').value.length - 1);
+    }
+    else document.querySelector('#urlInput').value += arg;
+  });
 

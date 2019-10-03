@@ -39,10 +39,8 @@ dom.addTodoText.addEventListener('click', ()=> {
   ipcRenderer.send('create-keyboard-app', 'mainWindow');
 })
 
-ipcRenderer.on('reply', (event, arg) => {
-  console.log(arg)
+ipcRenderer.on('type', function(event, arg){
+  if (arg === "backspace") dom.addTodoText.value = dom.addTodoText.value.slice(0, dom.addTodoText.value.length - 1);
+  else dom.addTodoText.value += arg;
 })
 
-ipcRenderer.on('type', function(event, arg){
-  dom.addTodoText.value += arg;
-})

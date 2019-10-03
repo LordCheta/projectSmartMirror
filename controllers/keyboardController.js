@@ -1,6 +1,6 @@
 const dom = require('../views/base') // Object containing all DOM queries
 
-window.onload = () => {
+
   // Keyboard Funtionalities
   let keyboardSwitch = () => {
     dom.letters.classList.toggle('hide');
@@ -21,8 +21,44 @@ window.onload = () => {
   dom.capsLock.onclick = capsLock;
 
   let keyClick = (e) => {
-    if (e.target.value === "close" || e.target.value === null) return
-    return e.target.value;
+    let keyPressed = e.target.value
+    switch (keyPressed) {
+      case "shift":
+        return "";
+      case "close":
+        return "";
+      case "capslock":
+        return "";
+      case null:
+        return "";
+      case "?123":
+        return "";
+      case "abc":
+        return "";
+      case "spacebar":
+        return " ";
+      case "tab":
+        return "    ";
+      case "enter":
+        return "\n";
+      case "backspace":
+        return "backspace";
+      case "mic":
+          return "";
+      case "↑":
+          return "";
+      case "→":
+          return "";
+      case "↓":
+          return "";
+      case "←":
+          return "";
+      default:
+        return keyPressed;
+    }
   }
-  dom.keyboard.onclick = keyClick;
-}
+
+  module.exports = {
+    keyClick
+  }
+
