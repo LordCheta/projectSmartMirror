@@ -204,7 +204,6 @@ let createBrowserAppWindow = () => {
   }));
 
   browserAppWindow.webContents.openDevTools();
-  console.log(browserAppWindow.webContents.id)
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
   browserAppWindow.once('ready-to-show', () => {
@@ -308,7 +307,7 @@ let createKeyboardWindow = () => {
     keyboardWindow.show()
     
   })
-  // keyboardWindow.webContents.openDevTools();
+  keyboardWindow.webContents.openDevTools();
 }
 
 // ---------------------END OF WINDOW CREATION INITIALIZATION---------------------------------->
@@ -343,7 +342,6 @@ app.on('window-all-closed', function () {
 
   //SPLASH WINDOW: REQUEST FOR VERSION
 ipcMain.on('get-version', event => {
-  console.log('app version: ', app.getVersion())
   event.sender.send('set-version', app.getVersion())
 })
 
