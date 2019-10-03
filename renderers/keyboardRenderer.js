@@ -8,9 +8,8 @@ let closeKeyBoard = ()=> {
 dom.closeKeyboard.addEventListener('click', closeKeyBoard)
 
 ipcRenderer.on('reply', (event, args) => {
-  console.log(args)
   dom.keyboard.addEventListener('click', (e) => {
-    ipcRenderer.sendTo(Number(args), 'type', e.target.value);
+    ipcRenderer.sendTo(Number(args), 'type', keyboardController.keyClick(e));
   })
 });
 
