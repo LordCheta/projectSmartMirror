@@ -63,5 +63,11 @@ module.exports = {
     smallLetters: document.querySelectorAll('.smallLetters'),
     capsLock: document.querySelector('#capsLock'),
     closeKeyboard: document.querySelector('#closeKeyboard'),
-    backspace: document.querySelector("input[value='spacebar']")
+    backspace: document.querySelector("input[value='spacebar']"),
+
+    //gallery dom items
+    images: document.querySelectorAll('img'),
+    overlayImage: document.querySelector('.overlay-inner img'),
+    overlay: document.querySelector('.overlay'),
+    overlayClose: document.querySelector('.close'),
 }
