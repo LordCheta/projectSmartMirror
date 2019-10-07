@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/gallery1.css">
+</head>
+<body>
+  <!-- Images used to open the lightbox -->
+<div class="row">
+  <div class="column">
+    <img src="../devAssets/test.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="../devAssets/test2.JPG" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="../devAssets/test.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="../devAssets/test2.JPG" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <img src="../devAssets/test.JPG" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="../devAssets/test2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="../devAssets/test.JPG" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="../devAssets/test2.jpg" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+<script src="../controllers/galleryController.js"></script>
+</body>
+</html>

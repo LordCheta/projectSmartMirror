@@ -143,6 +143,7 @@ let createGalleryAppWindow = () => {
 // when you should delete the corresponding element.
   galleryAppWindow = null
   });
+  galleryAppWindow.webContents.openDevTools();
 }
 
 let createUberAppWindow = () => {
