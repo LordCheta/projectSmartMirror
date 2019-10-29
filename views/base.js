@@ -25,7 +25,7 @@ module.exports = {
     skipButtons: document.querySelectorAll('[data-skip]'),
     ranges: document.querySelectorAll('.playerSlider'),
 
-    // whether dom elements
+    // weather dom elements
     loadingWeather: document.querySelector('.loadingWeather'),
     temp:document.querySelector('#temp'),
     tempIcon:document.querySelector('#tempIcon'),
@@ -63,5 +63,11 @@ module.exports = {
     smallLetters: document.querySelectorAll('.smallLetters'),
     capsLock: document.querySelector('#capsLock'),
     closeKeyboard: document.querySelector('#closeKeyboard'),
-    backspace: document.querySelector("input[value='spacebar']")
+    backspace: document.querySelector("input[value='spacebar']"),
+
+    // music player dom elements
+    audio: document.querySelector("audio"),
+    songDetails: document.querySelector("#songDetails"),
+    previousSong: document.querySelector("#previousSong"),
+    nextSong: document.querySelector("#nextSong")
 }
