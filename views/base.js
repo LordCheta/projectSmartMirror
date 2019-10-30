@@ -15,6 +15,7 @@ module.exports = {
     browserApp: document.querySelector('#browserApp'),
     timerApp: document.querySelector('#timerApp'),
     videoApp: document.querySelector('#videoApp'),
+    calendarApp: document.querySelector('#calendarApp'),
 
     //player dom elements
     player: document.querySelector('.player'),
