@@ -85,8 +85,9 @@ let createMusicPlayerAppWindow = () => {
   musicPlayerAppWindow = new BrowserWindow({ 
     show: false,
     backgroundColor: 'cyan',
-    maxWidth: 400,
-    maxHeight: 600
+    width: 600,
+    height: 200,
+    resizable: false
   }); 
 
   musicPlayerAppWindow.loadURL(url.format({
@@ -95,7 +96,7 @@ let createMusicPlayerAppWindow = () => {
     slashes: true
   }));
 
-  // musicPlayerAppWindow.webContents.openDevTools();
+  musicPlayerAppWindow.webContents.openDevTools();
 
 
 

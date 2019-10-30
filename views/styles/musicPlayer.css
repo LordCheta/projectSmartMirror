@@ -27,3 +27,17 @@
     text-transform: capitalize;
     letter-spacing: 0.12
 }
+audio{
+    background: transparent;
+}
+.musicIcons{
+    color: black;
+    background: #eeecec;
+    border-radius: 50px;
+    padding: 12px;
+    font-weight: bolder;
+}
+#customControl{
+    margin-top: -7%;
+    margin-left: 75%;
+}

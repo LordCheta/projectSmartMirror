@@ -9,20 +9,23 @@
     <link rel="stylesheet" href="./styles/musicPlayer.css">
 </head>
 <body>
-    <div id="musicMenu">
+    <!-- <div id="musicMenu">
         <img src="./assets/musicMenu.svg" id="musicMenuIcon" alt="music menu icon">
-    </div>
+    </div> -->
 
     <div id="albumArt">
-        <img id="albumArtImage" src="../devAssets/songart.jpg" alt="album art">
-        <p id="artistName">barlow girl</p>
-        <p id="songTitle">he walked away</p>
-
+        <div id="songDetails">    
+            <!-- Song Details are auot injected here -->
+        </div>
         <audio controls>
-            <source src="../devAssets/barlow-girl.mp3">
-        </audio>
+            <!-- Audio files are auoto injected here -->
+        </audio> 
+        <div id="customControl">
+            <span id="previousSong" class="musicIcons">&#8592;</span>
+            <span id="nextSong" class="musicIcons">&#8594;</span> 
+        </div>  
+          
     </div>
-
 
     <script type="module">
         require('../renderers/musicPlayerRenderer.js')
