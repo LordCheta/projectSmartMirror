@@ -15,11 +15,6 @@ dom.galleryApp.addEventListener('click', () => {
   menuExtrasController.toggleMenu();
 })
 
-dom.uberApp.addEventListener('click', () => {
-  ipcRenderer.send('create-uber-app')
-  menuExtrasController.toggleMenu();
-})
-
 dom.browserApp.addEventListener('click', () => {
   ipcRenderer.send('create-browser-app')
   menuExtrasController.toggleMenu();
@@ -35,6 +30,12 @@ dom.videoApp.addEventListener('click', () => {
   menuExtrasController.toggleMenu();
 })
 
+dom.calendarApp.addEventListener('click', () => {
+  ipcRenderer.send('create-calendar-app')
+  menuExtrasController.toggleMenu();
+})
+
+// for mainWindow
 dom.addTodoText.addEventListener('click', ()=> {
   ipcRenderer.send('create-keyboard-app', 'mainWindow');
 })
@@ -43,4 +44,6 @@ ipcRenderer.on('type', function(event, arg){
   if (arg === "backspace") dom.addTodoText.value = dom.addTodoText.value.slice(0, dom.addTodoText.value.length - 1);
   else dom.addTodoText.value += arg;
 })
+
+
 

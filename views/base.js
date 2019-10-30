@@ -15,6 +15,7 @@ module.exports = {
     browserApp: document.querySelector('#browserApp'),
     timerApp: document.querySelector('#timerApp'),
     videoApp: document.querySelector('#videoApp'),
+    calendarApp: document.querySelector('#calendarApp'),
 
     //player dom elements
     player: document.querySelector('.player'),
@@ -69,5 +70,10 @@ module.exports = {
     audio: document.querySelector("audio"),
     songDetails: document.querySelector("#songDetails"),
     previousSong: document.querySelector("#previousSong"),
-    nextSong: document.querySelector("#nextSong")
+    nextSong: document.querySelector("#nextSong"),
+    //gallery dom items
+    images: document.querySelectorAll('img'),
+    overlayImage: document.querySelector('.overlay-inner img'),
+    overlay: document.querySelector('.overlay'),
+    overlayClose: document.querySelector('.close'),
 }
