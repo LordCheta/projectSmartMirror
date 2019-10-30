@@ -15,11 +15,12 @@ let mainWindow // Global reference to window object
 let splashWindow
 let musicPlayerAppWindow
 let galleryAppWindow
-let uberAppWindow
 let browserAppWindow
 let timerAppWindow
 let videoAppWindow
 let keyboardWindow
+let calendarWindow
+
 
 const BrowserWindow = electron.BrowserWindow;
 
@@ -144,38 +145,6 @@ let createGalleryAppWindow = () => {
   galleryAppWindow = null
   });
   galleryAppWindow.webContents.openDevTools();
-}
-
-let createUberAppWindow = () => {
-  uberAppWindow = new BrowserWindow({ 
-    show: false,
-    backgroundColor: 'cyan',
-    width: 800, 
-    height: 450,
-  }); 
-
-  uberAppWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/views/uber.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
-
-  // uberAppWindow.webContents.openDevTools();
-
-
-
-// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-  uberAppWindow.once('ready-to-show', () => {
-  uberAppWindow.show()
-})
-
-// Emitted when the window is closed.
-  uberAppWindow.on('closed', function () {
-// Dereference the window object, usually you would store windows
-// in an array if your app supports multi windows, this is the time
-// when you should delete the corresponding element.
-  uberAppWindow = null
-  });
 }
 
 let createBrowserAppWindow = () => {
@@ -311,6 +280,38 @@ let createKeyboardWindow = () => {
   keyboardWindow.webContents.openDevTools();
 }
 
+let createCalendarWindow = () => {
+  calendarWindow = new BrowserWindow({ 
+    show: false,
+    backgroundColor: 'cyan',
+    width: 800, 
+    height: 450,
+  }); 
+
+  calendarWindow.loadURL(url.format({
+    pathname: path.join(__dirname, '/views/calendar.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  calendarWindow.webContents.openDevTools();
+
+
+
+// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
+  calendarWindow.once('ready-to-show', () => {
+  calendarWindow.show()
+})
+
+// Emitted when the window is closed.
+  calendarWindow.on('closed', function () {
+// Dereference the window object, usually you would store windows
+// in an array if your app supports multi windows, this is the time
+// when you should delete the corresponding element.
+  calendarWindow = null
+  });
+}
+
 // ---------------------END OF WINDOW CREATION INITIALIZATION---------------------------------->
 
 const Menu = electron.Menu
@@ -368,12 +369,6 @@ ipcMain.on('create-gallery-app', event => {
   createGalleryAppWindow();
 })
 
-// UBER APP
-ipcMain.on('create-uber-app', event => {
-  if (uberAppWindow) return;
-  createUberAppWindow();
-})
-
 // BROWSER APP
 ipcMain.on('create-browser-app', event => {
   if (browserAppWindow) return;
@@ -384,6 +379,12 @@ ipcMain.on('create-browser-app', event => {
 ipcMain.on('create-timer-app', event => {
   if (timerAppWindow) return;
   createTimerAppWindow();
+})
+
+// CALENDAR 
+ipcMain.on('create-calendar-app', event => {
+  if (calendarWindow) return;
+  createCalendarWindow();
 })
 
 // VIDEO APP

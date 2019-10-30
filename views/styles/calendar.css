@@ -1,0 +1,48 @@
+@font-face {
+  font-family: poppins;
+  src: url('../assets/poppins.woff2');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root{
+  --white: #ffffff;
+  --black: #000000;
+}
+body{
+  font-family: poppins;
+  background-color: var(--black);
+  padding: 20px;
+}
+
+#alert {
+  display: none;
+  border: 2px solid white;
+  font-family: poppins;
+  position: absolute;
+  z-index: 3;
+  background-color: black;
+  padding: 1%;
+  margin-left: 35%;
+}
+
+#addTodoText {
+  font-family: poppins;
+  padding: 1%;
+  font-weight: bold;
+  width: 97%;
+}
+
+#info {
+  color: white;
+  margin: 0.5em;
+}
+input[type=submit] {
+  font-weight: bold;
+  font-family: poppins;
+  float: right;
+  padding: 1%;
+  width: 20%;
+  text-align: center;
+  margin-left: 2%;
+  margin-top: 2%;
+}
