@@ -260,7 +260,6 @@ let createKeyboardWindow = () => {
     height: 400,
     frame: false,
     resizable: false,
-    
     alwaysOnTop: true,
     show: false,
     transparent: true
@@ -278,7 +277,7 @@ let createKeyboardWindow = () => {
     keyboardWindow.show()
     
   })
-  keyboardWindow.webContents.openDevTools();
+  //keyboardWindow.webContents.openDevTools();
 }
 
 let createCalendarWindow = () => {

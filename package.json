@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "ibm-watson": "^5.1.0"
+    "ibm-watson": "^5.1.0",
+    "node-audiorecorder": "^1.4.1"
   }
 }
