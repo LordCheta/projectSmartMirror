@@ -25,18 +25,17 @@ let loadSong = currentCount => {
 
 let nextSong = () => {
     if(songCount >= 5) {
-        songCount = 0
-        return
+        return songCount = 0
     }
-    songCount++
+    return songCount++
 }
 
 let previousSong = () => {
     if(songCount < 0) {
-        songCount = 0
-        return 
+        return songCount = 0
+        
     }
-    songCount--
+    return songCount--
 }
 
 window.onload = () => {
@@ -44,10 +43,10 @@ window.onload = () => {
 
     // eventListerners
     dom.previousSong.addEventListener('click', () => {
-       loadSong(songCount)
+       loadSong(previousSong())
     })
 
     dom.nextSong.addEventListener('click', () => {
-        loadSong(songCount)
+        loadSong(nextSong())
     })
 } 

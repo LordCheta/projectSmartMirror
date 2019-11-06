@@ -1,15 +1,19 @@
-@font-face {
-    font-family: poppins;
-    src: url('../assets/poppins.woff2');
+/* @font-face {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    src: url('../assets/-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif.woff2');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 :root{
     --white: #ffffff;
     --black: #000000;
 }
 body{
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background-color: var(--black);
     padding: 20px;
 }
@@ -28,22 +32,29 @@ body{
     padding: 7px;
     border-radius: 5px;
     font-weight:400;
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 #dateTimeDisplay{
     grid-column: 1 / span 1
 }
 #timeDisplay{
     width: 200px;
-    font-family: poppins;
-    font-weight: 200;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
     font-size: 50px;
     color: var(--white);
 }
 #dateDisplay{
     width: 200px;
-    font-family: poppins;
-    font-weight: 200;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
     font-size: 16px;
     color: var(--white);
     padding-bottom: 2px;
@@ -68,7 +79,9 @@ body{
 .loadingWeather{
     margin-left: 12%;
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: 100;
     font-size: 10px;
 }
@@ -79,7 +92,9 @@ body{
 
 #temp{
     width: 50px;
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: 200;
     color: var(--white);
     margin-top: -7%;
@@ -87,7 +102,9 @@ body{
 }
 
 #tempDescription{
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: 200;
     color: var(--white);
     margin-top: -2%;
@@ -100,7 +117,9 @@ body{
 #calenderTitle{
     width: 200px;
     margin-top: 5%;
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: 200;
     color: var(--white);
     border-bottom: 1px solid var(--white)
@@ -109,7 +128,9 @@ body{
 .todoModal {
     display: none;
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -119,7 +140,9 @@ body{
 #top5Todos {
     display: block;
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -133,7 +156,9 @@ body{
     grid-template-columns: 4fr 1fr;
     border-bottom: 1.5px solid var(--white);
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: bold;
     padding-bottom: 2%;
 }
@@ -190,12 +215,16 @@ body{
 #addTodo :not(:last-child) {
     background-color: var(--black);
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: bold;
     padding: 2%;
 }
 #addTodo :last-child {
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: bold;
     padding: 2%;
 }
@@ -206,17 +235,23 @@ body{
 #newsTitle{
     width: 200px;
     margin-top: 5%;
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: 200;
     color: var(--white);
     border-bottom: 1px solid var(--white);
 }
 #news {
     color: var(--white);
-    font-family: poppins;
-}
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+
 .newsHeadline {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     text-align: justify;
     margin-block-end: 0;
     font-weight: 400;
@@ -230,7 +265,9 @@ body{
     text-align: center;
     margin-top: 30%;
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-size: 50px;
     font-weight: 200;
     letter-spacing: 0.19em;
@@ -240,7 +277,9 @@ body{
     top: -30px;
     text-align: center;
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.09em
 }
 /* ------------------------------------ Menu -------------------------- */
@@ -280,7 +319,9 @@ body{
 #menuAppsList>ul>li>a{
     text-decoration: none;
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: 100;
     font-size: 20px
 }
@@ -290,7 +331,9 @@ body{
     grid-row: 200px;
     text-align: center;
     color: var(--white);
-    font-family: poppins;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-size: 15px;
     font-weight: 200;
     bottom: 0px;

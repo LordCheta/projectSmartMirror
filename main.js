@@ -16,7 +16,6 @@ let splashWindow
 let musicPlayerAppWindow
 let galleryAppWindow
 let browserAppWindow
-let timerAppWindow
 let videoAppWindow
 let keyboardWindow
 let calendarWindow
@@ -190,38 +189,6 @@ let createBrowserAppWindow = () => {
   });
 }
 
-let createTimerAppWindow = () => {
-  timerAppWindow = new BrowserWindow({ 
-    show: false,
-    backgroundColor: 'cyan',
-    width: 800, 
-    height: 450,
-  }); 
-
-  timerAppWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/views/timer.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
-
-  // timerAppWindow.webContents.openDevTools();
-
-
-
-// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-  timerAppWindow.once('ready-to-show', () => {
-  timerAppWindow.show()
-})
-
-// Emitted when the window is closed.
-  timerAppWindow.on('closed', function () {
-// Dereference the window object, usually you would store windows
-// in an array if your app supports multi windows, this is the time
-// when you should delete the corresponding element.
-  timerAppWindow = null
-  });
-}
-
 let createVideoAppWindow = () => {
   videoAppWindow = new BrowserWindow({ 
     show: false,
@@ -285,8 +252,8 @@ let createCalendarWindow = () => {
   calendarWindow = new BrowserWindow({ 
     show: false,
     backgroundColor: 'cyan',
-    width: 800, 
-    height: 450,
+    width: 1200, 
+    height: 550,
   }); 
 
   calendarWindow.loadURL(url.format({
@@ -295,7 +262,7 @@ let createCalendarWindow = () => {
     slashes: true
   }));
 
-  calendarWindow.webContents.openDevTools();
+  // calendarWindow.webContents.openDevTools();
 
 
 

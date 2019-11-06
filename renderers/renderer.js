@@ -20,11 +20,6 @@ dom.browserApp.addEventListener('click', () => {
   menuExtrasController.toggleMenu();
 })
 
-dom.timerApp.addEventListener('click', () => {
-  ipcRenderer.send('create-timer-app')
-  menuExtrasController.toggleMenu();
-})
-
 dom.videoApp.addEventListener('click', () => {
   ipcRenderer.send('create-video-app')
   menuExtrasController.toggleMenu();
