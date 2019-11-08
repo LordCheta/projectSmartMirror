@@ -1,6 +1,8 @@
 @font-face {
-  font-family: poppins;
-  src: url('../assets/poppins.woff2');
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+  src: url('../assets/sublime.ttf');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -76,7 +78,7 @@ body {
   font-weight: bold;
   border: 0;
   padding: 3px;
-  font-family: poppins;
+  font-family: sublime;
   font-size: 20px;
 }
 /* Responsive layout - makes a two column-layout instead of four columns */

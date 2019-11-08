@@ -3,7 +3,7 @@ const path = require('path');
 const url = require('url');
 
 
-require('electron-reload')(__dirname)
+// require('electron-reload')(__dirname)
 
 
 const app = electron.app; //Module to create native browser window
@@ -62,7 +62,7 @@ let createWindow = () => {
         slashes: true
     }));
 
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 
   
 
@@ -95,7 +95,7 @@ let createMusicPlayerAppWindow = () => {
     slashes: true
   }));
 
-  musicPlayerAppWindow.webContents.openDevTools();
+  // musicPlayerAppWindow.webContents.openDevTools();
 
 
 
@@ -144,7 +144,7 @@ let createGalleryAppWindow = () => {
 // when you should delete the corresponding element.
   galleryAppWindow = null
   });
-  galleryAppWindow.webContents.openDevTools();
+  // galleryAppWindow.webContents.openDevTools();
 }
 
 let createBrowserAppWindow = () => {
@@ -173,7 +173,7 @@ let createBrowserAppWindow = () => {
     slashes: true
   }));
 
-  browserAppWindow.webContents.openDevTools();
+  // browserAppWindow.webContents.openDevTools();
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
   browserAppWindow.once('ready-to-show', () => {
@@ -245,7 +245,7 @@ let createKeyboardWindow = () => {
     keyboardWindow.show()
     
   })
-  keyboardWindow.webContents.openDevTools();
+  // keyboardWindow.webContents.openDevTools();
 }
 
 let createCalendarWindow = () => {

@@ -1,6 +1,8 @@
 @font-face {
-    font-family: poppins;
-    src: url('../assets/poppins.woff2');
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    src: url('../assets/sublime.ttf');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -19,7 +21,7 @@ body{
     text-align: center;
     margin-top: 25%;
     color: var(--white);
-    font-family: poppins;
+    font-family: sublime;
     font-size: 50px;
     font-weight: 200;
     letter-spacing: 0.19em;
@@ -29,7 +31,7 @@ body{
     top: -50px;
     text-align: center;
     color: var(--white);
-    font-family: poppins;
+    font-family: sublime;
 }
 #loadIcon{
     position: relative;
@@ -41,6 +43,6 @@ body{
     top: -100px;
     margin-left: 170px;
     color: var(--white);
-    font: poppins;
+    font: sublime;
     font-size: 10px
 }
