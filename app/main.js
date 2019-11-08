@@ -3,7 +3,7 @@ const path = require('path');
 const url = require('url');
 
 
-require('electron-reload')(__dirname)
+// require('electron-reload')(__dirname)
 
 
 const app = electron.app; //Module to create native browser window
@@ -16,7 +16,6 @@ let splashWindow
 let musicPlayerAppWindow
 let galleryAppWindow
 let browserAppWindow
-let timerAppWindow
 let videoAppWindow
 let keyboardWindow
 let calendarWindow
@@ -63,7 +62,7 @@ let createWindow = () => {
         slashes: true
     }));
 
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 
   
 
@@ -96,7 +95,7 @@ let createMusicPlayerAppWindow = () => {
     slashes: true
   }));
 
-  musicPlayerAppWindow.webContents.openDevTools();
+  // musicPlayerAppWindow.webContents.openDevTools();
 
 
 
@@ -145,7 +144,7 @@ let createGalleryAppWindow = () => {
 // when you should delete the corresponding element.
   galleryAppWindow = null
   });
-  galleryAppWindow.webContents.openDevTools();
+  // galleryAppWindow.webContents.openDevTools();
 }
 
 let createBrowserAppWindow = () => {
@@ -174,7 +173,7 @@ let createBrowserAppWindow = () => {
     slashes: true
   }));
 
-  browserAppWindow.webContents.openDevTools();
+  // browserAppWindow.webContents.openDevTools();
 
 // Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
   browserAppWindow.once('ready-to-show', () => {
@@ -187,38 +186,6 @@ let createBrowserAppWindow = () => {
 // in an array if your app supports multi windows, this is the time
 // when you should delete the corresponding element.
   browserAppWindow = null
-  });
-}
-
-let createTimerAppWindow = () => {
-  timerAppWindow = new BrowserWindow({ 
-    show: false,
-    backgroundColor: 'cyan',
-    width: 800, 
-    height: 450,
-  }); 
-
-  timerAppWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/views/timer.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
-
-  // timerAppWindow.webContents.openDevTools();
-
-
-
-// Wait for 'ready-to-show' to display our window, should not be included when splah screen logic is active
-  timerAppWindow.once('ready-to-show', () => {
-  timerAppWindow.show()
-})
-
-// Emitted when the window is closed.
-  timerAppWindow.on('closed', function () {
-// Dereference the window object, usually you would store windows
-// in an array if your app supports multi windows, this is the time
-// when you should delete the corresponding element.
-  timerAppWindow = null
   });
 }
 
@@ -278,15 +245,15 @@ let createKeyboardWindow = () => {
     keyboardWindow.show()
     
   })
-  keyboardWindow.webContents.openDevTools();
+  // keyboardWindow.webContents.openDevTools();
 }
 
 let createCalendarWindow = () => {
   calendarWindow = new BrowserWindow({ 
     show: false,
     backgroundColor: 'cyan',
-    width: 800, 
-    height: 450,
+    width: 1200, 
+    height: 550,
   }); 
 
   calendarWindow.loadURL(url.format({
@@ -295,7 +262,7 @@ let createCalendarWindow = () => {
     slashes: true
   }));
 
-  calendarWindow.webContents.openDevTools();
+  // calendarWindow.webContents.openDevTools();
 
 
 

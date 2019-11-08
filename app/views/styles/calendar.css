@@ -1,6 +1,8 @@
 @font-face {
-  font-family: poppins;
-  src: url('../assets/poppins.woff2');
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+  src: url('../assets/sublime.ttf');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -9,7 +11,9 @@
   --black: #000000;
 }
 body{
-  font-family: poppins;
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--black);
   padding: 20px;
 }
@@ -17,7 +21,9 @@ body{
 #alert {
   display: none;
   border: 2px solid white;
-  font-family: poppins;
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   position: absolute;
   z-index: 3;
   background-color: black;
@@ -26,7 +32,9 @@ body{
 }
 
 #addTodoText {
-  font-family: poppins;
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   padding: 1%;
   font-weight: bold;
   width: 97%;
@@ -38,7 +46,9 @@ body{
 }
 input[type=submit] {
   font-weight: bold;
-  font-family: poppins;
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   float: right;
   padding: 1%;
   width: 20%;

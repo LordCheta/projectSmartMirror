@@ -1,6 +1,8 @@
 @font-face {
-  font-family: poppins;
-  src: url('../assets/poppins.woff2');
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+  src: url('../assets/sublime.ttf');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,7 +29,7 @@ div{
 }
 input {
   -webkit-app-region: no-drag;
-  font-family: poppins;
+  font-family: sublime;
   padding: 2%;
   background-color: var(--black);
   color: white;

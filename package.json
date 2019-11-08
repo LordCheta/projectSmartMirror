@@ -2,9 +2,10 @@
   "name": "projectsmartmirror",
   "version": "0.0.1",
   "description": "The OS for a touchscreen and voice enabled smart mirror",
-  "main": "main.js",
+  "main": "./app/main.js",
   "scripts": {
     "start": "electron .",
+    "dist": "electron-builder -l --x64",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,7 +30,8 @@
   "homepage": "https://github.com/LordCheta/projectSmartMirror#readme",
   "devDependencies": {
     "electron": "^4.2.5",
-    "electron-reload": "^1.4.0"
+    "electron-reload": "^1.4.0",
+    "electron-builder": "^22.1.0"
   },
   "dependencies": {
     "axios": "^0.19.0",

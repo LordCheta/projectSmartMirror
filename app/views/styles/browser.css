@@ -3,8 +3,10 @@
     padding: 0;
 }
 @font-face {
-    font-family: poppins;
-    src: url('../assets/poppins.woff2');
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    src: url('../assets/sublime.ttf');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -21,7 +23,7 @@ body{
 }
 .tabLinks{
     padding: 5px;
-    font-family: poppins;
+    font-family: sublime;
     background: #fff;
     border: 1px solid #fff;
     margin-left: 0px;
@@ -45,10 +47,10 @@ body{
     border-radius: 50px;
     margin-top: 1%;
     color: var(--black);
-    font-family: poppins;
+    font-family: sublime;
 }
 #goToUrl{
-    font-family: poppins;
+    font-family: sublime;
     color: var(--white);
     padding: 5px;
     border: 1px solid var(--white);
