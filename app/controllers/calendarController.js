@@ -1,3 +1,5 @@
+// incorporating the calendar module
+
 document.addEventListener("DOMContentLoaded", function(){
   var calendarEl = document.getElementById('calendar');
 
@@ -22,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function(){
          end: arg.end,
          allDay: arg.allDay
        })
-      calendar.unselect();
-      document.getElementById('alert').style.display = 'none';
+        calendar.unselect();
+        document.getElementById('alert').style.display = 'none';
       } 
       document.getElementById('close').addEventListener("click", function(){
         document.getElementById('alert').style.display = 'none';
