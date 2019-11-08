@@ -1,0 +1,365 @@
+@font-face {
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    src: url('../assets/sublime.ttf');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+:root{
+    --white: #ffffff;
+    --black: #000000;
+}
+body{
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--black);
+    padding: 20px;
+}
+/* -----------------------------Desktop View Styles------------------------------------- */
+.desktop{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto, auto, auto, auto, 200px;
+    align-content: space-around;
+}
+
+#micAlert {
+    display: none;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 7px;
+    border-radius: 5px;
+    font-weight:400;
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#dateTimeDisplay{
+    grid-column: 1 / span 1;
+}
+#innerDateTime{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid #fff;
+}
+#timeDisplay{
+    margin-left: 10%;
+    margin-top: 30%;
+    width: 200px;
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+    font-size: 50px;
+    color: var(--white);
+    text-shadow: 0px 0px 5px #fff, 0px 0px 20px #fff;
+}
+#dateDisplay{
+    margin-left: 10%;
+    width: 200px;
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+    font-size: 16px;
+    color: var(--white);
+    padding-bottom: 2px;
+    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #fff;
+    position: relative;
+    top:-20%
+}
+#menuIcons{
+    grid-column: 2 /span 1;
+    margin-top: 10%;
+    margin-left: 80%;
+}
+#menuIcons>nav>ul>li{ 
+    display: inline-block;
+    margin: 10px;
+}
+#weatherDisplay{
+    grid-row: auto;
+    grid-column: 1 / span 1;
+    margin-top: -10%;
+    margin-left: 40%;
+}
+#innerWeatherDisplay{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid #fff;
+}
+.loadingWeather{
+    margin-left: 12%;
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+    font-size: 10px;
+}
+.wText{
+    margin-top: -1%;
+    margin-left: -6%;
+}
+#tempImage{
+    margin-left: 35%;
+}
+#temp{
+    width: 50px;
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 200;
+    color: var(--white);
+    margin-top: -8%;
+    margin-left: 35%;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 20px #fff;
+}
+
+#tempDescription{
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 200;
+    color: var(--white);
+    margin-top: -10%;
+    margin-left: 10%;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 20px #fff;
+}
+#calenderDisplay{
+    grid-column: 1 / span 1;
+    grid-row: auto;
+}
+#calenderTitle{
+    width: 250px;
+    margin-top: 5%;
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 200;
+    color: var(--white);
+    border-bottom: 1px solid var(--white)
+}
+
+.todoModal {
+    display: none;
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#top5Todos {
+    display: block;
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.todoModalContent {
+    padding: 3% 5%;
+    border: 2px solid var(--white);
+}
+#todoHeader {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    border-bottom: 1.5px solid var(--white);
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: bold;
+    padding-bottom: 2%;
+}
+#todoClose {
+    text-align: right;
+    line-height: 1;
+    color: var(--white);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.todo {
+    transform: scale(1.3)
+}
+#todos {
+    margin-block-start: 1em;
+}
+#aTodoContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#todos label, #top5Todos label {
+    grid-column: 1 / span 3;
+    margin-block-start: 0;
+    margin-block-end: 0.7em;
+    border-bottom: 0.1px solid #eee;
+    padding-bottom: 0.8em;
+}
+#todos p, #top5Todos p {
+    grid-column: 4;
+    margin-block-start: 0;
+    margin-block-end: 0.7em;
+    border-bottom: 0.1px solid #eee;
+    padding-bottom: 0.8em;
+}
+.lineThrough {
+    text-decoration: line-through;
+}
+#addTodo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding-top: 3%;
+}
+#addTodoText {
+    grid-column: 1 / span 3;
+}
+#addTodoDate {
+    grid-column: 4 / span 2;
+    margin: 0 2%;
+}
+#addTodoBtn {
+    grid-column: 6;
+}
+#addTodo :not(:last-child) {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: bold;
+    padding: 2%;
+}
+#addTodo :last-child {
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: bold;
+    padding: 2%;
+}
+#newsDisplay{
+    grid-column: 2 / span 1;
+    grid-row: auto;
+}
+#newsTitle{
+    width: 200px;
+    margin-top: 5%;
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 200;
+    color: var(--white);
+    border-bottom: 1px solid var(--white);
+}
+#news {
+    color: var(--white);
+    font-family: sublime;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+
+.newsHeadline {
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    text-align: justify;
+    margin-block-end: 0;
+    font-weight: 400;
+}
+.newsSource {
+    margin-block-start: 0;
+    font-size: 13px;
+    font-weight: 100; 
+    text-shadow: 0px 0px 5px #fff, 0px 0px 20px #fff;
+}
+#test{
+    text-align: center;
+    margin-top: 30%;
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-size: 50px;
+    font-weight: 200;
+    letter-spacing: 0.19em;
+}
+#testb{
+    position: relative;
+    top: -30px;
+    text-align: center;
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.09em
+}
+/* ------------------------------------ Menu -------------------------- */
+#menu{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 999;
+    width: 270px;
+    height: 100%;
+    background-color: rgba(19, 13, 13, 0.795);
+    /* opacity: 0.9; */
+    -webkit-transform: translate(-270px, 0);
+    transform: translate(-270px, 0);
+    transition: transform 1s ease-in-out;
+}
+#menuTopBtns{
+    /* padding: 5px; */
+    border-bottom: 1px solid var(--white)
+}
+#menuTopBtns>ul>li{
+    display: inline;
+    margin-right: 15px;
+}
+.menuTopIcons{
+    width: 16%;
+    height: 16%;
+}
+#menuTopBtns>ul>li{
+    list-style: none;
+}
+#menuAppsList>ul>li{
+    list-style: none;
+    margin-top: 20px;
+}
+#menuAppsList>ul>li>a{
+    text-decoration: none;
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+    font-size: 20px
+}
+/* ------------------------------------ Footer------------------------------------------ */
+#foot{
+    grid-column: 1/-1;
+    grid-row: 200px;
+    text-align: center;
+    color: var(--white);
+    font-family: sublime;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-size: 15px;
+    font-weight: 200;
+    bottom: 0px;
+
+}

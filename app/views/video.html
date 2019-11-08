@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="./styles/home.css">
+    <!-- <link rel="stylesheet" href="./styles/p.css"> -->
+    <link rel="stylesheet" href="./styles/videoPlayer.css">
+</head>
+<body>
+    <div class="player">
+
+        <video src="../devAssets/video.webm" class="playerVideo viewer"></video>
+
+        <div class="playerControls">
+            <div class="progress">
+                <div class="progressFilled"></div>
+            </div>
+
+            <button class="playerButton toggle" title="Toggle Play">►</button>
+            <input type="range" name="volume" class="playerSlider" min="0" max="1" step="0.01" value="1" id="">
+            <input type="range" name="playbackRate" class="playerSlider" min="0.5" max="2" step="0.1" value="1" id="">
+
+            <button data-skip="-10" class="fontFamily playerButton">« 10s</button>
+            <button data-skip="25" class="fontFamily playerButton">25s »</button>
+        </div>
+    </div>
+
+    <script type="module">
+        require('../renderers/videoPlayerRenderer.js')
+        require('../controllers/videoPlayerController.js')
+    </script>
+</body>
+</html>

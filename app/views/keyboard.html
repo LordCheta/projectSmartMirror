@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Keyboard</title>
+  <link rel="stylesheet" href="./styles/keyboard.css">
+</head>
+<body style="-webkit-app-region: drag">
+  <section class="keyboard">
+    <input type="button" value="close" id="closeKeyboard">
+    <div class="letters">
+      <div>
+        <input type="button" value="tab">
+        <span class="smallLetters">
+          <input type="button" value="q">
+          <input type="button" value="w">
+          <input type="button" value="e">
+          <input type="button" value="r">
+          <input type="button" value="t">
+          <input type="button" value="y">
+          <input type="button" value="u">
+          <input type="button" value="i">
+          <input type="button" value="o">
+          <input type="button" value="p">
+        </span>
+        <span class="capitalLetters hide">
+          <input type="button" value="Q">
+          <input type="button" value="W">
+          <input type="button" value="E">
+          <input type="button" value="R">
+          <input type="button" value="T">
+          <input type="button" value="Y">
+          <input type="button" value="U">
+          <input type="button" value="I">
+          <input type="button" value="O">
+          <input type="button" value="P">
+        </span>
+        <input type="button" value="backspace">
+      </div>
+      <div>
+        <input type="button" value="capslock" id="capsLock">
+        <span class="smallLetters">
+          <input type="button" value="a">
+          <input type="button" value="s">
+          <input type="button" value="d">
+          <input type="button" value="f">
+          <input type="button" value="g">
+          <input type="button" value="h">
+          <input type="button" value="j">
+          <input type="button" value="k">
+          <input type="button" value="l">
+        </span>
+        <span class="capitalLetters hide">
+          <input type="button" value="A">
+          <input type="button" value="S">
+          <input type="button" value="D">
+          <input type="button" value="F">
+          <input type="button" value="G">
+          <input type="button" value="H">
+          <input type="button" value="J">
+          <input type="button" value="K">
+          <input type="button" value="L">
+        </span>
+        <input type="button" value="enter">
+      </div>
+      <div>
+          <input type="button" value="shift">
+          <span class="smallLetters">
+            <input type="button" value="z">
+            <input type="button" value="x">
+            <input type="button" value="c">
+            <input type="button" value="v">
+            <input type="button" value="b">
+            <input type="button" value="n">
+            <input type="button" value="m">
+          </span>
+          <span class="capitalLetters hide">
+            <input type="button" value="Z"">
+            <input type="button" value="X"">
+            <input type="button" value="C"">
+            <input type="button" value="V"">
+            <input type="button" value="B"">
+            <input type="button" value="N"">
+            <input type="button" value="M"">
+          </span>
+          <input type="button" value="@">
+          <input type="button" value=",">
+          <input type="button" value="shift">
+          <input type="button" value="&#8593;">
+      </div>
+      <div>
+          <input type="button" value="?123" id="kswitch">
+          <input type="button" value="mic">
+          <input type="button" value="spacebar">
+          <input type="button" value=".">
+          <input type="button" value="/">
+          <input type="button" value="#">
+          <input type="button" value="&#8592;">
+          <input type="button" value="&#8595;">
+          <input type="button" value="&#8594;">
+      </div>
+    </div>
+    <div class="symbols hide">
+      <div>
+        <input type="button" value="`">
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
+        <input type="button" value="7">
+        <input type="button" value="8">
+        <input type="button" value="9">
+        <input type="button" value="0">
+        <input type="button" value="backspace">
+      </div>
+      <div>
+        <input type="button" value="@">
+        <input type="button" value="#">
+        <input type="button" value="$">
+        <input type="button" value="£">
+        <input type="button" value="%">
+        <input type="button" value="&">
+        <input type="button" value="-">
+        <input type="button" value="+">
+        <input type="button" value="(">
+        <input type="button" value=")">
+        <input type="button" value="{">
+        <input type="button" value="}">
+        <input type="button" value="enter">
+      </div>
+      <div>
+          <input type="button" value="\">
+          <input type="button" value="/">
+          <input type="button" value="|">
+          <input type="button" value="^">
+          <input type="button" value="*">
+          <input type="button" value='"'>
+          <input type="button" value="'">
+          <input type="button" value=":">
+          <input type="button" value=";">
+          <input type="button" value="!">
+          <input type="button" value="?">
+          <input type="button" value=".">
+          <input type="button" value=",">
+          <input type="button" value="shift">
+          <input type="button" value="&#8593;">
+      </div>
+      <div>
+          <input type="button" value="abc" id="kswitch2">
+          <input type="button" value="mic">
+          <input type="button" value="spacebar">
+          <input type="button" value=".com">
+          <input type="button" value="<">
+          <input type="button" value=">">
+          <input type="button" value="_">
+          <input type="button" value="&#8592;">
+          <input type="button" value="&#8595;">
+          <input type="button" value="&#8594;">
+      </div>
+    </div>
+  </section>
+  <!-- <script>
+    window.onload = () => {
+    // Keyboard Funtionalities
+    // copy to base and controller
+    let dom = {
+        keyboard: document.querySelector('.keyboard'),
+        kswitch: document.querySelector('#kswitch'),
+        kswitch2: document.querySelector('#kswitch2'),
+        letters: document.querySelector('.letters'),
+        symbols: document.querySelector('.symbols'),
+        capitalLetters: document.querySelectorAll('.capitalLetters'),
+        smallLetters: document.querySelectorAll('.smallLetters'),
+        capsLock: document.querySelector('#capsLock'),
+      }
+    
+    let keyboardSwitch = () => {
+      dom.letters.classList.toggle('hide');
+      dom.symbols.classList.toggle('hide');
+    };
+    dom.kswitch.onclick = keyboardSwitch;
+    dom.kswitch2.onclick = keyboardSwitch;
+    let capsLock = () => {
+      dom.capsLock.classList.toggle('activeCapsLock');
+      dom.capitalLetters.forEach(element => {
+        element.classList.toggle('hide');
+      });
+      dom.smallLetters.forEach(element => {
+        element.classList.toggle('hide');
+      });
+    }
+    dom.capsLock.onclick = capsLock;
+      let keyClick = (e) => {
+        console.log(e.target.value || '');
+        return e.target.value;
+    }
+    dom.keyboard.onclick = keyClick;
+  }
+  </script> -->
+  <script type="module">
+      // require('../renderers/renderer.js')
+      require('../renderers/keyboardRenderer.js');
+      require('../controllers/keyboardController.js')
+ </script>
+</body>
+</html>

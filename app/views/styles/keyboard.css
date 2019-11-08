@@ -1,0 +1,52 @@
+@font-face {
+  font-family: sublime;
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+  src: url('../assets/sublime.ttf');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root{
+  --white: #ffffff;
+  --black: #000000;
+}
+
+.keyboard {
+  width: 100%;
+  height: auto;
+}
+.hide {
+  display: none;
+}
+#closeKeyboard {
+  color: red;
+  border: 2px solid red;
+  font-weight: bold;
+  margin-left: 86%;
+}
+div{
+  padding: 3px;
+}
+input {
+  -webkit-app-region: no-drag;
+  font-family: sublime;
+  padding: 2%;
+  background-color: var(--black);
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  border: 2px solid white;
+  transition: background-color 0.7s ease-out;
+}
+input[value="spacebar"] {
+  width: 30%;
+}
+input:focus:not(.activeCapsLock){
+  background-color: var(--white);
+  color: var(--black)
+}
+.activeCapsLock {
+  background-color: red;
+  color: white;
+}
