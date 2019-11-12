@@ -229,7 +229,9 @@ let createKeyboardWindow = () => {
     resizable: false,
     alwaysOnTop: true,
     show: false,
-    transparent: true
+    transparent: true,
+    x: 300,
+    y: 500
   });
 
   keyboardWindow.loadURL(url.format({
