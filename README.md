@@ -1,5 +1,5 @@
 # projectSmartMirror
-UI for a smart mirror project built on electron
+UI for a smart mirror project built using the Electron.js framework for Desktop apps.
 
 
 ### To Run The Project
